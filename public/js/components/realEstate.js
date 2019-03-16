@@ -271,7 +271,7 @@ var Header = function (_Component) {
   function Header() {
     _classCallCheck(this, Header);
 
-    var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this));
+    var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, null));
 
     _this.state = {
       name: 'Aaron'
@@ -376,14 +376,13 @@ var Header = function (_Component) {
       var listingsData = this.props.listingsData;
 
 
-      if (listingsData == undefined || listingsData.length == 0) {
-        return "Sorry your filter did not match any listing";
+      if (listingsData == undefined || listingsData.length === 0) {
+        return 'Sorry your filter did not match any listing';
       }
 
       return listingsData.map(function (listing, index) {
-        if (_this2.props.globalState.view == 'box') {
-
-          //This is the long box view
+        if (_this2.props.globalState.view === 'box') {
+          // This is the long box view
           return _react2.default.createElement(
             'div',
             { className: 'col-sm-4 col-md-4 col-lg-3', key: index },

@@ -4,7 +4,7 @@ export default class Filter extends Component {
   constructor () {
     super()
     this.state = {
-      
+
     };
     this.cities = this.cities.bind(this);
     this.houseTypes = this.houseTypes.bind(this);
@@ -18,7 +18,7 @@ export default class Filter extends Component {
   //Function to filter cities
   cities(){
     if(this.props.globalState.populateFormsData.cities != undefined){
-       var { cities } = this.props.globalState.populateFormsData
+       let { cities } = this.props.globalState.populateFormsData
        console.log(cities)
       return cities.map((item)=>{
         return(
@@ -30,7 +30,7 @@ export default class Filter extends Component {
   //Function by house type
   houseTypes(){
     if(this.props.globalState.populateFormsData.houseTypes != undefined){
-       var { houseTypes } = this.props.globalState.populateFormsData
+       let { houseTypes } = this.props.globalState.populateFormsData
        console.log(houseTypes)
       return houseTypes.map((item)=>{
         return(
@@ -42,7 +42,7 @@ export default class Filter extends Component {
   //Function by number of bedrooms
   bedrooms(){
     if(this.props.globalState.populateFormsData.bedrooms != undefined){
-       var { bedrooms } = this.props.globalState.populateFormsData
+       let { bedrooms } = this.props.globalState.populateFormsData
        console.log(bedrooms)
       return bedrooms.map((item)=>{
         return(

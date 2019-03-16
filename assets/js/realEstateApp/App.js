@@ -36,7 +36,7 @@ class App extends Component {
 
   componentWillMount(){
 
-    var listingsData = this.state.listingsData.sort((a, b) => {
+    let listingsData = this.state.listingsData.sort((a, b) => {
       return a.price - b.price
     });
 
@@ -47,8 +47,8 @@ class App extends Component {
 
   //The change function
   change(event){
-    var name = event.target.name
-    var value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value
+    let name = event.target.name
+    let value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value
 
     this.setState({
       [name]:value
@@ -68,7 +68,7 @@ class App extends Component {
 
   //Function which filters the data based on user input
   filteredData(){
-    var newData = this.state.listingsData.filter((item)=>{
+    let newData = this.state.listingsData.filter((item)=>{
       return item.price >= this.state.min_price && item.price <= this.state.max_price && item.floorSpace >= this.state.min_floor_space && item.floorSpace <= this.state.max_floor_space && item.rooms >= this.state.bedrooms
     })
 
@@ -98,9 +98,9 @@ class App extends Component {
 
     if(this.state.search != ''){
       newData = newData.filter((item) => {
-        var city = item.city.toLowerCase();
-        var searchText = this.state.search.toLowerCase();
-        var n = city.match(searchText);
+        let city = item.city.toLowerCase();
+        let searchText = this.state.search.toLowerCase();
+        let n = city.match(searchText);
 
         if(n != null){
           return true;

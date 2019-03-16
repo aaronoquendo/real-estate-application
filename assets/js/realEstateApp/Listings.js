@@ -3,21 +3,20 @@ import React, { Component} from 'react'
 
 export default class Header extends Component {
   constructor () {
-    super()
+    super();
     this.state = {
       name: 'Aaron'
     }
     this.loopListings = this.loopListings.bind(this)
   }
   loopListings(){
-    var { listingsData } = this.props;
+    let { listingsData } = this.props;
 
-    if(listingsData == undefined || listingsData.length == 0){ return "Sorry your filter did not match any listing" }
+    if(listingsData == undefined || listingsData.length === 0){ return 'Sorry your filter did not match any listing' }
 
     return listingsData.map((listing, index) => {
-      if(this.props.globalState.view == 'box'){
-        
-        //This is the long box view
+      if (this.props.globalState.view === 'box') {
+        // This is the long box view
         return(
           <div className="col-sm-4 col-md-4 col-lg-3" key={index}>
             <div className="listing">
