@@ -67,7 +67,7 @@ var listingsData = [
         'gym'
       ],
       houseType:'Ranch',
-      image:'http://www.newindiaclassifieds.com/categories/realestate/2837Samruddhi-Apartment-Hubli.jpg'
+      image:'https://cdn.vox-cdn.com/thumbor/vAZEMsqZIJsmKcT8paqeFY1xI80=/0x0:1200x800/1200x800/filters:focal(504x304:696x496)/cdn.vox-cdn.com/uploads/chorus_image/image/56604061/090817wBroadway.0.jpg'
     },
     {
       address:'276 greenleaf ave',

@@ -55,7 +55,7 @@ var Filter = function (_Component) {
       if (this.props.globalState.populateFormsData.cities != undefined) {
         var cities = this.props.globalState.populateFormsData.cities;
 
-        console.log(cities);
+
         return cities.map(function (item) {
           return _react2.default.createElement(
             "option",
@@ -65,6 +65,7 @@ var Filter = function (_Component) {
         });
       }
     }
+
     //Function by house type
 
   }, {
@@ -83,6 +84,7 @@ var Filter = function (_Component) {
         });
       }
     }
+
     //Function by number of bedrooms
 
   }, {
@@ -271,51 +273,49 @@ var Header = function (_Component) {
   function Header() {
     _classCallCheck(this, Header);
 
-    var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, null));
+    var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this));
 
-    _this.state = {
-      name: 'Aaron'
-    };
+    _this.state = {};
     return _this;
   }
 
   _createClass(Header, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       return _react2.default.createElement(
-        'header',
+        "header",
         null,
         _react2.default.createElement(
-          'div',
-          { className: 'logo' },
+          "div",
+          { className: "logo" },
           _react2.default.createElement(
-            'span',
+            "span",
             null,
-            'EstateDiscovery.com'
+            "EstateDiscovery.com"
           )
         ),
         _react2.default.createElement(
-          'nav',
-          { className: 'right-nav' },
+          "nav",
+          { className: "right-nav" },
           _react2.default.createElement(
-            'a',
-            { href: '#' },
-            'Create posting'
+            "a",
+            { href: "#" },
+            "Create posting"
           ),
           _react2.default.createElement(
-            'a',
-            { href: '#' },
-            'About Us'
+            "a",
+            { href: "#" },
+            "About Us"
           ),
           _react2.default.createElement(
-            'a',
-            { href: '#' },
-            'Log in'
+            "a",
+            { href: "#" },
+            "Log In"
           ),
           _react2.default.createElement(
-            'a',
-            { href: '#', className: 'register-btn' },
-            'Register'
+            "a",
+            { href: "#", className: "register-btn" },
+            "Register"
           )
         )
       );
@@ -361,9 +361,7 @@ var Header = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this));
 
-    _this.state = {
-      name: 'Aaron'
-    };
+    _this.state = {};
     _this.loopListings = _this.loopListings.bind(_this);
     return _this;
   }
@@ -376,7 +374,7 @@ var Header = function (_Component) {
       var listingsData = this.props.listingsData;
 
 
-      if (listingsData == undefined || listingsData.length === 0) {
+      if (listingsData === undefined || listingsData.length === 0) {
         return 'Sorry your filter did not match any listing';
       }
 
@@ -420,7 +418,7 @@ var Header = function (_Component) {
                           _react2.default.createElement(
                             'span',
                             { className: 'user-name' },
-                            'Jack Smith '
+                            'Jeffery Johnson '
                           ),
                           _react2.default.createElement(
                             'span',
@@ -760,7 +758,7 @@ var listingsData = [{
   floorSpace: 2000,
   extras: ['elevator', 'gym'],
   houseType: 'Ranch',
-  image: 'http://www.newindiaclassifieds.com/categories/realestate/2837Samruddhi-Apartment-Hubli.jpg'
+  image: 'https://cdn.vox-cdn.com/thumbor/vAZEMsqZIJsmKcT8paqeFY1xI80=/0x0:1200x800/1200x800/filters:focal(504x304:696x496)/cdn.vox-cdn.com/uploads/chorus_image/image/56604061/090817wBroadway.0.jpg'
 }, {
   address: '276 greenleaf ave',
   city: 'Staten Island',
@@ -840,7 +838,6 @@ var App = function (_Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
     _this.state = {
-      name: 'Aaron',
       listingsData: _listingsData2.default,
       city: 'All',
       houseType: 'All',
@@ -869,7 +866,6 @@ var App = function (_Component) {
   _createClass(App, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-
       var listingsData = this.state.listingsData.sort(function (a, b) {
         return a.price - b.price;
       });
@@ -890,7 +886,6 @@ var App = function (_Component) {
       var value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
 
       this.setState(_defineProperty({}, name, value), function () {
-        console.log(_this2.state);
         _this2.filteredData();
       });
     }
@@ -980,6 +975,7 @@ var App = function (_Component) {
       var bedrooms = this.state.listingsData.map(function (item) {
         return item.rooms;
       });
+
       bedrooms = new Set(bedrooms);
       bedrooms = [].concat(_toConsumableArray(bedrooms));
       bedrooms = bedrooms.sort();

@@ -9,7 +9,6 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      name: 'Aaron',
       listingsData,
       city: 'All',
       houseType:'All',
@@ -35,7 +34,6 @@ class App extends Component {
   }
 
   componentWillMount(){
-
     let listingsData = this.state.listingsData.sort((a, b) => {
       return a.price - b.price
     });
@@ -43,6 +41,7 @@ class App extends Component {
     this.setState({
       listingsData
     });
+
   }
 
   //The change function
@@ -53,10 +52,10 @@ class App extends Component {
     this.setState({
       [name]:value
 
-    },() =>{
-      console.log(this.state)
+    },() => {
       this.filteredData()
     })
+
   }
 
   // Function to change the view of the listings
@@ -68,32 +67,33 @@ class App extends Component {
 
   //Function which filters the data based on user input
   filteredData(){
-    let newData = this.state.listingsData.filter((item)=>{
+    let newData = this.state.listingsData.filter((item) => {
       return item.price >= this.state.min_price && item.price <= this.state.max_price && item.floorSpace >= this.state.min_floor_space && item.floorSpace <= this.state.max_floor_space && item.rooms >= this.state.bedrooms
     })
 
     if(this.state.city != "All"){
-      newData = newData.filter((item) =>{
+      newData = newData.filter((item) => {
         return item.city == this.state.city
       })
     }
 
     if(this.state.houseType != "All"){
-      newData = newData.filter((item) =>{
+      newData = newData.filter((item) => {
         return item.houseType == this.state.houseType
       })
     }
 
     if(this.state.sortby == 'price-dsc'){
-      newData = newData.sort((a,b) =>{
+      newData = newData.sort((a,b) => {
         return a.price - b.price
       })
     }
 
     if(this.state.sortby == 'price-asc'){
-      newData = newData.sort((a,b) =>{
+      newData = newData.sort((a,b) => {
         return b.price - a.price
       })
+      
     };
 
     if(this.state.search != ''){
@@ -137,6 +137,7 @@ class App extends Component {
      let bedrooms = this.state.listingsData.map((item) =>{
        return item.rooms
      });
+
      bedrooms = new Set(bedrooms);
      bedrooms = [...bedrooms];
      bedrooms = bedrooms.sort();
@@ -155,16 +156,14 @@ class App extends Component {
     return (
       <div class="app">
         <Header />
-
-          <section id="content-area" >
-            <div id="main-container" className="container">
-              <div className="row">
-                <Filter change={this.change} globalState={this.state} populateAction={this.populateForms}/>
-                <Listings listingsData={this.state.filteredData} change={this.change} globalState={this.state} changeView={this.changeView}/>
-              </div>
+        <section id="content-area" >
+          <div id="main-container" className="container">
+            <div className="row">
+              <Filter change={this.change} globalState={this.state} populateAction={this.populateForms}/>
+              <Listings listingsData={this.state.filteredData} change={this.change} globalState={this.state} changeView={this.changeView}/>
             </div>
-          </section>
-
+          </div>
+        </section>
       </div>
     )
   }
