@@ -17,7 +17,7 @@ export default class Filter extends Component {
 
   //Function to filter cities
   cities(){
-    if(this.props.globalState.populateFormsData.cities != undefined){
+    if(this.props.globalState.populateFormsData.cities !== undefined){
        let { cities } = this.props.globalState.populateFormsData;
 
       return cities.map((item)=>{
@@ -30,7 +30,7 @@ export default class Filter extends Component {
 
   //Function by house type
   houseTypes(){
-    if(this.props.globalState.populateFormsData.houseTypes != undefined){
+    if(this.props.globalState.populateFormsData.houseTypes !== undefined){
        let { houseTypes } = this.props.globalState.populateFormsData
        console.log(houseTypes)
       return houseTypes.map((item)=>{
@@ -43,7 +43,7 @@ export default class Filter extends Component {
 
   //Function by number of bedrooms
   bedrooms(){
-    if(this.props.globalState.populateFormsData.bedrooms != undefined){
+    if(this.props.globalState.populateFormsData.bedrooms !== undefined){
        let { bedrooms } = this.props.globalState.populateFormsData
        console.log(bedrooms)
       return bedrooms.map((item) => {
@@ -85,7 +85,7 @@ export default class Filter extends Component {
 
           <div className="filters floor-space">
             <span className="title">Floor Space</span>
-            <input type="text" name="min_floor_space" className="min-floor-space" onChange={this.props.change} onChange={this.props.change} value={this.props.globalState.min_floor_space}/>
+            <input type="text" name="min_floor_space" className="min-floor-space" onChange={this.props.change} value={this.props.globalState.min_floor_space}/>
             <input type="text" name="max_floor_space" className="max-floor-space" onChange={this.props.change} value={this.props.globalState.max_floor_space}/>
           </div>
 

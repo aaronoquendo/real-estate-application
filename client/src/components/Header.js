@@ -14,10 +14,10 @@ export default class Header extends Component {
           <span>EstateDiscovery.com</span>
         </div>
         <nav className="right-nav">
-          <a href="#">Create posting</a>
-          <a href="#">About Us</a>
-          <a href="#">Log In</a>
-          <a href="#" className="register-btn">Register</a>
+          <a href="/">Create posting</a>
+          <a href="/">About Us</a>
+          <a href="/">Log In</a>
+          <a href="/" className="register-btn">Register</a>
         </nav>
       </header>
     )

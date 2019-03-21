@@ -1,11 +1,12 @@
-import React, { Component} from 'react'
-import ReactDOM from 'react-dom'
-import Header from './Header.js'
-import Filter from './Filter.js'
-import Listings from './Listings.js'
+import React, { Component } from 'react';
+import Header from './components/Header.js'
+import Filter from './components/Filter.js'
+import Listings from './components/Listings.js'
 import listingsData from './data/listingsData.js'
-
+import './styles/css/bootstrap.min.css';
+import './styles/sass/main.scss';
 class App extends Component {
+
   constructor () {
     super()
     this.state = {
@@ -71,38 +72,38 @@ class App extends Component {
       return item.price >= this.state.min_price && item.price <= this.state.max_price && item.floorSpace >= this.state.min_floor_space && item.floorSpace <= this.state.max_floor_space && item.rooms >= this.state.bedrooms
     })
 
-    if(this.state.city != "All"){
+    if(this.state.city !== "All"){
       newData = newData.filter((item) => {
-        return item.city == this.state.city
+        return item.city !== this.state.city
       })
     }
 
-    if(this.state.houseType != "All"){
+    if(this.state.houseType !== "All"){
       newData = newData.filter((item) => {
-        return item.houseType == this.state.houseType
+        return item.houseType !== this.state.houseType
       })
     }
 
-    if(this.state.sortby == 'price-dsc'){
+    if(this.state.sortby === 'price-dsc'){
       newData = newData.sort((a,b) => {
         return a.price - b.price
       })
     }
 
-    if(this.state.sortby == 'price-asc'){
+    if(this.state.sortby === 'price-asc'){
       newData = newData.sort((a,b) => {
         return b.price - a.price
       })
-      
+
     };
 
-    if(this.state.search != ''){
+    if(this.state.search !== ''){
       newData = newData.filter((item) => {
         let city = item.city.toLowerCase();
         let searchText = this.state.search.toLowerCase();
         let n = city.match(searchText);
 
-        if(n != null){
+        if(n !== null){
           return true;
         }
 
@@ -152,9 +153,9 @@ class App extends Component {
 
   }
 
-  render () {
+  render() {
     return (
-      <div class="app">
+      <div className="App">
         <Header />
         <section id="content-area" >
           <div id="main-container" className="container">
@@ -165,10 +166,8 @@ class App extends Component {
           </div>
         </section>
       </div>
-    )
+    );
   }
 }
 
-const app = document.getElementById('app')
-
-ReactDOM.render(<App />, app)
+export default App;
