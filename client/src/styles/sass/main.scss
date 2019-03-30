@@ -3,9 +3,11 @@
 @import "variables";
 @import "grid";
 
+
 *,
 body,
-html {
+html,
+:after, :before {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
   // background: purple;
@@ -14,7 +16,16 @@ html {
 .container {
   max-width: 100%;
 }
-@import "header";
+
+.hidden {
+  display: none;
+}
+
+@import "../../components/Header/header";
+@import "../../components/FrontPage/HeroDisplay/heroDisplay.scss";
+@import "../../components/FrontPage/RegionInfoFooter/RegionInfoFooter.scss";
+@import "../../components/FrontPage/BrandsFooter/brands-footer.scss";
+@import "../../components/FrontPage/Footer/footer.scss";
 @import "filter";
 @import "listings";
 @import "content-area";

@@ -15,7 +15,7 @@ export default class Filter extends Component {
     this.props.populateAction();
   };
 
-  //Function to filter cities
+  // Function to filter cities
   cities(){
     if(this.props.globalState.populateFormsData.cities !== undefined){
        let { cities } = this.props.globalState.populateFormsData;
@@ -28,7 +28,7 @@ export default class Filter extends Component {
     }
   }
 
-  //Function by house type
+  // Function by house type
   houseTypes(){
     if(this.props.globalState.populateFormsData.houseTypes !== undefined){
        let { houseTypes } = this.props.globalState.populateFormsData

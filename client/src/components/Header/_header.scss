@@ -1,0 +1,70 @@
+.header-wrapper{
+  background: $darkpurple;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+    overflow: auto;
+    height: 80px;
+    max-width:1280px;
+    padding: 20px 15px;
+    margin: 0 auto;
+    .logo {
+
+    }
+
+    .left-nav {
+      float: right;
+
+      a {
+        color: white;
+        text-decoration: none;
+        padding: 7px 25px;
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 0.9rem;
+
+        &:hover {
+          color: #FF718E;
+        }
+
+        &.register-btn {
+          background: $pink;
+          padding: 7px 25px;
+          text-align: center;
+          color: white;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .right-nav {
+      float: right;
+
+      a {
+        color: white;
+        text-decoration: none;
+        padding: 7px 25px;
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 0.9rem;
+
+        &:hover {
+          color: #FF718E;
+        }
+
+        &.register-btn {
+          background: $pink;
+          padding: 7px 25px;
+          text-align: center;
+          color: white;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+

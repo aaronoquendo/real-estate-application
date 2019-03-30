@@ -1,0 +1,41 @@
+.brand-links-footer{
+  background: #000;
+  text-align: center;
+  padding: 10px 0;
+  color: #aaa;
+  h2{
+    display: inline-block;
+    font-size: 13px;
+    margin: 0;
+    margin-right: 10px;
+    color: #aaa;
+    a{
+      color: #aaa;
+      font-weight: 700;
+      margin-right: 5px;
+    }
+  }
+  .brand-links-footer-link{
+    color: #A7A6AB;
+    font-weight: 700;
+
+  }
+  .brand-links-footer-list{
+    display: inline-block;
+    columns: 1;
+    line-height: 30px;
+    li{
+      margin: 0 10px;
+      display: inline-block;
+      text-align: center;
+
+
+      :after{
+        content: '|';
+        padding: 0 10px;
+      }
+
+    }
+
+  }
+}
