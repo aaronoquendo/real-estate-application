@@ -64,8 +64,83 @@
           background-color: rgba(0, 0, 0, 0.5);
 
           a {
+            display: block;
             color: $white;
+            text-decoration: none;
+            cursor: pointer;
           }
+        }
+        li.active {
+          background-color: rgba(0, 116, 228, 0.75);
+
+        }
+        li.active:after {
+          content: '';
+          border-radius: 0;
+          bottom: -19px;
+          background: 0 0;
+          border-color: transparent transparent #fff;
+          border-style: solid;
+          border-width: 0 10px 10px;
+          display: inline-block;
+          margin-bottom: -1px;
+          margin-left: -5px;
+          top: auto;
+          position: absolute;
+          left: 48%;
+
+
+        }
+
+
+      }
+    }
+
+    .search-form {
+      position: relative;
+      width: 610px;
+      min-width: 180px;
+      display: inline-block;
+
+      .input-wrapper {
+        position: relative;
+        width: 610px;
+        min-width: 180px;
+        display: inline-block;
+
+        .search-input {
+          padding: 17px 120px 19px 20px;
+          font-size: 18px;
+          width: 100%;
+          height: 60px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: none;
+          color: #444;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    .searchBtnContainer {
+      position: absolute;
+      top: 0;
+      right: 1px;
+      bottom: 0;
+      word-spacing: -0.26em;
+
+      .search-button {
+        margin-top: 8px;
+        margin-right: 8px;
+        width: 102px;
+        height: 44px;
+        font-size: 18px;
+        background: #3390e9;
+        color: #fff;
+        border-radius: 5px;
+        border-width: 0;
+
+        .searchBtnText {
         }
       }
     }
@@ -89,12 +164,14 @@
       margin-right: auto;
       padding-left: 20px;
       padding-right: 20px;
-      .upsell-main{
+
+      .upsell-main {
         font-weight: 400;
         display: flex;
         align-items: center;
         color: $white;
-        .icon{
+
+        .icon {
           display: inline-block;
           height: 40px;
           width: 50px;
@@ -103,15 +180,18 @@
           background-position: center center;
           background-size: contain;
         }
-        strong{
+
+        strong {
           margin-right: 10px;
           font-weight: 700;
-          font-size:18px;
+          font-size: 18px;
         }
-        span{
-          font-size:18px;
+
+        span {
+          font-size: 18px;
         }
       }
+
       .upsell-button {
         margin-left: auto;
         font-size: 15px;

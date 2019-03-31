@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom';
 import Filter from '../Filter.js'
 import Listings from '../Listings.js'
-import listingsData from '../../data/listingsData.js'
+import listingsData from '../../assets/data/listingsData.js'
 
 class Finder extends Component {
   constructor (props) {

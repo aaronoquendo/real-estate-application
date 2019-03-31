@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom';
 export default class FrontPage extends Component {
   constructor (props) {
     super(props)
@@ -13,7 +13,7 @@ export default class FrontPage extends Component {
         <div className='hero-wrapper'>
           <div className='video-wrapper'>
             <video autoPlay muted loop poster='https://videos.zillowstatic.com/homepage/video_zest_20170503_1800b_q.jpg'>
-              <source src='https://videos.zillowstatic.com/homepage/video_zest_20170503_1800b.mp4' type='video/mp4' />
+              <source src={require('../../../assets/videos/house2.mp4')} type='video/mp4' />
             </video>
           </div>
 
@@ -23,24 +23,36 @@ export default class FrontPage extends Component {
             </header>
             <div className='home-page-tabs'>
               <ul>
-                <li className=''><a role='navigation' href='/buy/'>Buy</a></li>
-                <li className='active'><a role='navigation' href='/rent/'>Rent</a></li>
-                <li className=''><a role='navigation' href='/sell/'>Sell</a></li>
-                <li className=''><a role='navigation' href='/find-your-home/'>Estimate</a></li>
+                <li className='active'>
+                  <Link to='/buy'>
+                    Buy
+                  </Link>
+                </li>
+                <li className=''>
+                  <Link to='/rent'>
+                    Rent
+                  </Link>
+                </li>
+                <li className=''>
+                  <Link to='/sell'>
+                    Sell
+                  </Link>
+                </li>
+                <li className=''>
+                  <Link to='/estimate'>
+                    Estimate
+                  </Link>
+                </li>
               </ul>
             </div>
-            <form className='react-autosuggest__container num-rows-5'>
-              <div  aria-haspopup='listbox' aria-owns='react-autowhatever-1' aria-expanded='false'
-                className='react-autosuggest__container'>
-                <input type='text' autoComplete='off' aria-autocomplete='list' aria-controls='react-autowhatever-1'
-                  className='react-autosuggest__input'
+            <form className='search-form'>
+              <div className='input-wrapper'>
+                <input type='text' autoComplete='off' aria-autocomplete='list' aria-controls='react-autowhatever-1' className='search-input'
                   placeholder='Enter an address, neighborhood, city, or ZIP code' value='' />
-                <div id='react-autowhatever-1' role='listbox'
-                  className='react-autosuggest__suggestions-container' />
               </div>
-              <div className='searchBtnContainer zsg-searchbox-content-container'>
-                <button className='searchBtn zsg-search-button_text zsg-search-button_primary'><span
-                  className='searchBtnText'>Search</span><span className='searchBtnIcon zsg-icon-searchglass' />
+              <div className='searchBtnContainer'>
+                <button className='search-button'>
+                  <span className='searchBtnText'>Search</span>
                 </button>
               </div>
             </form>
