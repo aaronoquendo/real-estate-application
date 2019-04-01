@@ -4,8 +4,9 @@ import Header from './components/Header/Header.js'
 import FrontPage from './components/FrontPage/FrontPage.js'
 import Finder from './components/Finder/Finder'
 
-import './styles/css/bootstrap.min.css'
-import './styles/sass/main.scss'
+import './assets/styles/css/bootstrap.min.css'
+import './assets/styles/css/hamburgers.min.css'
+import './assets/styles/sass/main.scss'
 class App extends Component {
   render () {
     return (

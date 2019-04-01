@@ -20,7 +20,7 @@ export default class HeroDisplaySell extends Component {
 
           <div className='search-container'>
             <header className='home-page-header'>
-              <h1 className='heading'>Find your next rental</h1>
+              <h1 className='heading'>Sell your home</h1>
             </header>
             <div className='home-page-tabs'>
               <ul>
@@ -59,14 +59,14 @@ export default class HeroDisplaySell extends Component {
             </form>
           </div>
 
-          <div className='home-page-upsell-ribbon find-an-agent'>
-            <div className='zsg-layout-width upsell-contraint'>
+          <div className='hero-footer'>
+            <div className='hero-footer-container'>
               <a className='upsell-main' href='/pre-approval/#/landing'>
-                <img alt='Be ready to buy' className='icon' src='https://s.zillowstatic.com/homepage/static/upsell_agent_icon.svg' />
-                <strong>Be ready to buy</strong>
-                <span>Get pre-qualified by a local lender on Trillio.</span>
+                <img alt='Be ready to buy' className='icon' src='https://s.zillowstatic.com/homepage/static/upsell_list_a_rental.png' />
+                <strong>Thinking of selling?</strong>
+                <span>Our guide is a great place to start.</span>
               </a>
-              <a href='/pre-approval/#/landing' className='upsell-button zsg-button_primary'>Get started</a></div>
+              <a href='/pre-approval/#/landing' className='upsell-button zsg-button_primary'>Learn more</a></div>
           </div>
         </div>
       </div>

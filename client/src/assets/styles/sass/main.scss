@@ -21,11 +21,13 @@ html,
   display: none;
 }
 
-@import "../../components/Header/header";
-@import "../../components/FrontPage/HeroDisplay/heroDisplay.scss";
-@import "../../components/FrontPage/RegionInfoFooter/regionInfoFooter.scss";
-@import "../../components/FrontPage/BrandsFooter/brands-footer.scss";
-@import "../../components/FrontPage/Footer/footer.scss";
+@import "../../../components/Header/header";
+@import "../../../components/FrontPage/HeroDisplay/heroDisplay";
+@import "../../../components/FrontPage/RegionInfoFooter/regionInfoFooter";
+@import "../../../components/FrontPage/BrandsFooter/brands-footer";
+@import "../../../components/FrontPage/Footer/footer";
 @import "filter";
 @import "listings";
 @import "content-area";
+
+@import "media-queries";

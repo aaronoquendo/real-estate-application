@@ -34,7 +34,7 @@ const Footer = () => (
         <li>
           <a href='/' className='zfoot-footer-logo' accessKey='1' data-za-action='Zillow logo click'
             data-za-category='!inherit'>
-            <img className='logo' src={require('../../../assets/images/trillio-logo.png')} />
+            <img className='logo' src={require('../../../assets/images/trillio-house.png')} />
           </a>
         </li>
         <li>

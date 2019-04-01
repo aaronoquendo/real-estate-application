@@ -13,7 +13,7 @@ export default class RegionInfoFooter extends Component {
         <footer className='region-info-content'>
           <div className='container'>
             <div className='row'>
-              <div className='region-info-col col-sm-6 col-md-3 col-lg-3'>
+              <div className='region-info-col col-6 col-sm-6 col-md-3 col-lg-3'>
                 <h6 className='region-info-header'>Real Estate</h6>
                 <div>
                   <ul className='region-info-list'>
@@ -77,7 +77,7 @@ export default class RegionInfoFooter extends Component {
                   <button type='button' className='show-hide-link'>More</button>
                 </div>
               </div>
-              <div className='region-info-col col-sm-6 col-md-3 col-lg-3'>
+              <div className='region-info-col col-6 col-sm-6 col-md-3 col-lg-3'>
                 <h6 className='region-info-header'>Rentals</h6>
                 <div>
                   <ul className='region-info-list'>
@@ -143,7 +143,7 @@ export default class RegionInfoFooter extends Component {
                   <button type='button' className='show-hide-link'>More</button>
                 </div>
               </div>
-              <div className='region-info-col col-sm-6 col-md-3 col-lg-3'>
+              <div className='region-info-col col-6 col-sm-6 col-md-3 col-lg-3'>
                 <h6 className='region-info-header'>Mortgage Rates</h6>
                 <div>
                   <ul className='region-info-list'>
@@ -202,7 +202,7 @@ export default class RegionInfoFooter extends Component {
                   <button type='button' className='show-hide-link'>More</button>
                 </div>
               </div>
-              <div className='region-info-col col-sm-6 col-md-3 col-lg-3'>
+              <div className='region-info-col col-6 col-sm-6 col-md-3 col-lg-3'>
                 <h6 className='region-info-header'>Browse Homes</h6>
                 <div>
                   <ul className='region-info-list'>

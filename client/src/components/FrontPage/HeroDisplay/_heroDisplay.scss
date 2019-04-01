@@ -22,6 +22,16 @@
       margin: auto;
 
     }
+    :after{
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(65, 65, 65, 0.35);
+      z-index: 99;
+    }
   }
 
   .search-container {
@@ -98,13 +108,15 @@
 
     .search-form {
       position: relative;
-      width: 610px;
+      width: 100%;
+      max-width: 610px;
       min-width: 180px;
       display: inline-block;
 
       .input-wrapper {
         position: relative;
-        width: 610px;
+        width: 100%;
+        max-width: 610px;
         min-width: 180px;
         display: inline-block;
 
@@ -146,13 +158,13 @@
     }
   }
 
-  .home-page-upsell-ribbon {
+  .hero-footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     background: rgba(24, 52, 93, 0.85);
 
-    .zsg-layout-width {
+    .hero-footer-container {
 
       display: flex;
       align-items: center;
@@ -206,6 +218,7 @@
         width: auto;
         line-height: 1.5;
         color: $white;
+        text-decoration: none;
       }
     }
   }
