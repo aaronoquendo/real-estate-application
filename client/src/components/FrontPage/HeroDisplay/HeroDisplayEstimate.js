@@ -14,7 +14,7 @@ export default class HeroDisplayEstimate extends Component {
       <div className='hero-display'>
         <div className='hero-wrapper'>
           <div className='video-wrapper'>
-            <video autoPlay muted loop poster='https://videos.zillowstatic.com/homepage/video_zest_20170503_1800b_q.jpg'>
+            <video autoPlay muted loop poster='https://videos.zillowstatic.com/homepage/video_zest_20170503_1800b_q.jpg' webkit-playsinline='true' playsinline='true'>
               <source src='https://videos.zillowstatic.com/homepage/video_zest_20170503_1800b.mp4' type='video/mp4' />
             </video>
           </div>
