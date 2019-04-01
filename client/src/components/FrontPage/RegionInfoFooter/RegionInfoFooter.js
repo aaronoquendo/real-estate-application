@@ -119,26 +119,26 @@ export default class RegionInfoFooter extends Component {
                     <li className='hidden'><a href='/property'>Boston houses for rent</a></li>
                     <li className='hidden'><a href='/property'>Charlotte houses for rent</a></li>
                     <li className='hidden'><a href='/property'>Columbus houses for rent</a></li>
-                    <li className='hidden'><a href='/fort-worth-tx/rent-houses/'>Fort Worth houses for rent</a></li>
-                    <li className='hidden'><a href='/fresno-ca/rent-houses/'>Fresno houses for rent</a></li>
-                    <li className='hidden'><a href='/indianapolis-in/rent-houses/'>Indianapolis houses for rent</a></li>
-                    <li className='hidden'><a href='/jacksonville-fl/rent-houses/'>Jacksonville houses for rent</a></li>
-                    <li className='hidden'><a href='/las-vegas-nv/rent-houses/'>Las Vegas houses for rent</a></li>
-                    <li className='hidden'><a href='/houston-tx/rent-houses/'>Houston houses for rent</a></li>
-                    <li className='hidden'><a href='/memphis-tn/rent-houses/'>Memphis houses for rent</a></li>
-                    <li className='hidden'><a href='/milwaukee-wi/rent-houses/'>Milwaukee houses for rent</a></li>
-                    <li className='hidden'><a href='/nashville-tn/rent-houses/'>Nashville houses for rent</a></li>
-                    <li className='hidden'><a href='/oakland-ca/rent-houses/'>Oakland houses for rent</a></li>
-                    <li className='hidden'><a href='/oklahoma-city-ok/rent-houses/'>Oklahoma City houses for rent</a></li>
-                    <li className='hidden'><a href='/philadelphia-pa/rent-houses/'>Philadelphia houses for rent</a></li>
-                    <li className='hidden'><a href='/phoenix-az/rent-houses/'>Phoenix houses for rent</a></li>
-                    <li className='hidden'><a href='/portland-or/rent-houses/'>Portland houses for rent</a></li>
-                    <li className='hidden'><a href='/san-antonio-tx/rent-houses/'>San Antonio houses for rent</a></li>
-                    <li className='hidden'><a href='/san-francisco-ca/rent-houses/'>San Francisco houses for rent</a></li>
-                    <li className='hidden'><a href='/san-jose-ca/rent-houses/'>San Jose houses for rent</a></li>
-                    <li className='hidden'><a href='/tampa-fl/rent-houses/'>Tampa houses for rent</a></li>
-                    <li className='hidden'><a href='/tucson-az/rent-houses/'>Tucson houses for rent</a></li>
-                    <li className='hidden'><a href='/washington-dc/rent-houses/'>Washington DC houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Fort Worth houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Fresno houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Indianapolis houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Jacksonville houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Las Vegas houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Houston houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Memphis houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Milwaukee houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Nashville houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Oakland houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Oklahoma City houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Philadelphia houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Phoenix houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Portland houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>San Antonio houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>San Francisco houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>San Jose houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Tampa houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Tucson houses for rent</a></li>
+                    <li className='hidden'><a href='/property'>Washington DC houses for rent</a></li>
                   </ul>
                   <button type='button' className='show-hide-link'>More</button>
                 </div>
@@ -147,57 +147,56 @@ export default class RegionInfoFooter extends Component {
                 <h6 className='region-info-header'>Mortgage Rates</h6>
                 <div>
                   <ul className='region-info-list'>
-                    <li className=''><a href='/mortgage-rates/'>Current mortgage rates</a></li>
-                    <li className=''><a href='/mortgage-rates/ak/'>Alaska mortgage rates</a></li>
-                    <li className=''><a href='/mortgage-rates/al/'>Alabama mortgage rates</a></li>
-                    <li className=''><a href='/mortgage-rates/ar/'>Arkansas mortgage rates</a></li>
-                    <li className=''><a href='/mortgage-rates/az/'>Arizona mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ca/'>California mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/co/'>Colorado mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ct/'>Connecticut mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/de/'>Delaware mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/fl/'>Florida mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ga/'>Georgia mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/hi/'>Hawaii mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ia/'>Iowa mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/id/'>Idaho mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/il/'>Illinois mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/in/'>Indiana mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ks/'>Kansas mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ky/'>Kentucky mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/la/'>Louisiana mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ma/'>Massachusetts mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/md/'>Maryland mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/me/'>Maine mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/mi/'>Michigan mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/mn/'>Minnesota mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/mo/'>Missouri mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ms/'>Mississippi mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/mt/'>Montana mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/nc/'>North Carolina mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/nd/'>North Dakota mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ne/'>Nebraska mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/nh/'>New Hampshire mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/nj/'>New Jersey mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/nm/'>New Mexico mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/nv/'>Nevada mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ny/'>New York mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/oh/'>Ohio mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ok/'>Oklahoma mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/or/'>Oregon mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/pa/'>Pennsylvania mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ri/'>Rhode Island mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/sc/'>South Carolina mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/sd/'>South Dakota mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/tn/'>Tennessee mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/tx/'>Texas mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/ut/'>Utah mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/va/'>Virginia mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/vt/'>Vermont mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/wa/'>Washington mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/wi/'>Wisconsin mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/wv/'>West Virginia mortgage rates</a></li>
-                    <li className='hidden'><a href='/mortgage-rates/wy/'>Wyoming mortgage rates</a></li>
+                    <li className=''><a href='/property'>Current mortgage rates</a></li>
+                    <li className=''><a href='/property'>Alaska mortgage rates</a></li>
+                    <li className=''><a href='/property'>Alabama mortgage rates</a></li>
+                    <li className=''><a href='/property'>Arkansas mortgage rates</a></li>
+                    <li className=''><a href='/property'>Arizona mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>California mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Colorado mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Connecticut mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Delaware mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Florida mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Georgia mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Hawaii mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Iowa mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Idaho mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Illinois mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Kansas mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Kentucky mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Louisiana mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Massachusetts mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Maryland mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Maine mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Michigan mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Minnesota mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Missouri mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Mississippi mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Montana mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>North Carolina mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>North Dakota mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Nebraska mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>New Hampshire mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>New Jersey mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>New Mexico mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Nevada mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>New York mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Ohio mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Oklahoma mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Oregon mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Pennsylvania mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Rhode Island mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>South Carolina mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>South Dakota mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Tennessee mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Texas mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Utah mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Virginia mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Vermont mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Washington mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Wisconsin mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>West Virginia mortgage rates</a></li>
+                    <li className='hidden'><a href='/property'>Wyoming mortgage rates</a></li>
                   </ul>
                   <button type='button' className='show-hide-link'>More</button>
                 </div>
@@ -206,59 +205,59 @@ export default class RegionInfoFooter extends Component {
                 <h6 className='region-info-header'>Browse Homes</h6>
                 <div>
                   <ul className='region-info-list'>
-                    <li className=''><a href='/browse/homes/ca/'>California</a></li>
-                    <li className=''><a href='/browse/homes/tx/'>Texas</a></li>
-                    <li className=''><a href='/browse/homes/ny/'>New York</a></li>
-                    <li className=''><a href='/browse/homes/fl/'>Florida</a></li>
-                    <li className=''><a href='/browse/homes/il/'>Illinois</a></li>
-                    <li className='hidden'><a href='/browse/homes/pa/'>Pennsylvania</a></li>
-                    <li className='hidden'><a href='/browse/homes/oh/'>Ohio</a></li>
-                    <li className='hidden'><a href='/browse/homes/mi/'>Michigan</a></li>
-                    <li className='hidden'><a href='/browse/homes/ga/'>Georgia</a></li>
-                    <li className='hidden'><a href='/browse/homes/nc/'>North Carolina</a></li>
-                    <li className='hidden'><a href='/browse/homes/nj/'>New Jersey</a></li>
-                    <li className='hidden'><a href='/browse/homes/va/'>Virginia</a></li>
-                    <li className='hidden'><a href='/browse/homes/wa/'>Washington</a></li>
-                    <li className='hidden'><a href='/browse/homes/ma/'>Massachusetts</a></li>
-                    <li className='hidden'><a href='/browse/homes/in/'>Indiana</a></li>
-                    <li className='hidden'><a href='/browse/homes/az/'>Arizona</a></li>
-                    <li className='hidden'><a href='/browse/homes/tn/'>Tennessee</a></li>
-                    <li className='hidden'><a href='/browse/homes/mo/'>Missouri</a></li>
-                    <li className='hidden'><a href='/browse/homes/md/'>Maryland</a></li>
-                    <li className='hidden'><a href='/browse/homes/wi/'>Wisconsin</a></li>
-                    <li className='hidden'><a href='/browse/homes/mn/'>Minnesota</a></li>
-                    <li className='hidden'><a href='/browse/homes/co/'>Colorado</a></li>
-                    <li className='hidden'><a href='/browse/homes/al/'>Alabama</a></li>
-                    <li className='hidden'><a href='/browse/homes/sc/'>South Carolina</a></li>
-                    <li className='hidden'><a href='/browse/homes/la/'>Louisiana</a></li>
-                    <li className='hidden'><a href='/browse/homes/ky/'>Kentucky</a></li>
-                    <li className='hidden'><a href='/browse/homes/or/'>Oregon</a></li>
-                    <li className='hidden'><a href='/browse/homes/ok/'>Oklahoma</a></li>
-                    <li className='hidden'><a href='/browse/homes/ct/'>Connecticut</a></li>
-                    <li className='hidden'><a href='/browse/homes/ia/'>Iowa</a></li>
-                    <li className='hidden'><a href='/browse/homes/ms/'>Mississippi</a></li>
-                    <li className='hidden'><a href='/browse/homes/ar/'>Arkansas</a></li>
-                    <li className='hidden'><a href='/browse/homes/ks/'>Kansas</a></li>
-                    <li className='hidden'><a href='/browse/homes/ut/'>Utah</a></li>
-                    <li className='hidden'><a href='/browse/homes/nv/'>Nevada</a></li>
-                    <li className='hidden'><a href='/browse/homes/nm/'>New Mexico</a></li>
-                    <li className='hidden'><a href='/browse/homes/wv/'>West Virginia</a></li>
-                    <li className='hidden'><a href='/browse/homes/ne/'>Nebraska</a></li>
-                    <li className='hidden'><a href='/browse/homes/id/'>Idaho</a></li>
-                    <li className='hidden'><a href='/browse/homes/hi/'>Hawaii</a></li>
-                    <li className='hidden'><a href='/browse/homes/me/'>Maine</a></li>
-                    <li className='hidden'><a href='/browse/homes/nh/'>New Hampshire</a></li>
-                    <li className='hidden'><a href='/browse/homes/ri/'>Rhode Island</a></li>
-                    <li className='hidden'><a href='/browse/homes/mt/'>Montana</a></li>
-                    <li className='hidden'><a href='/browse/homes/de/'>Delaware</a></li>
-                    <li className='hidden'><a href='/browse/homes/sd/'>South Dakota</a></li>
-                    <li className='hidden'><a href='/browse/homes/ak/'>Alaska</a></li>
-                    <li className='hidden'><a href='/browse/homes/nd/'>North Dakota</a></li>
-                    <li className='hidden'><a href='/browse/homes/vt/'>Vermont</a></li>
-                    <li className='hidden'><a href='/browse/homes/dc/district-of-columbia-county/'>Washington, DC</a></li>
-                    <li className='hidden'><a href='/browse/homes/wy/'>Wyoming</a></li>
-                    <li className='hidden'><a href='/browse/homes/pr/'>Puerto Rico</a></li>
-                    <li className='hidden'><a href='/browse/homes/vi/'>Virgin Islands</a></li>
+                    <li className=''><a href='/property'>California</a></li>
+                    <li className=''><a href='/property'>Texas</a></li>
+                    <li className=''><a href='/property'>New York</a></li>
+                    <li className=''><a href='/property'>Florida</a></li>
+                    <li className=''><a href='/property'>Illinois</a></li>
+                    <li className='hidden'><a href='/property'>Pennsylvania</a></li>
+                    <li className='hidden'><a href='/property'>Ohio</a></li>
+                    <li className='hidden'><a href='/property'>Michigan</a></li>
+                    <li className='hidden'><a href='/property'>Georgia</a></li>
+                    <li className='hidden'><a href='/property'>North Carolina</a></li>
+                    <li className='hidden'><a href='/property'>New Jersey</a></li>
+                    <li className='hidden'><a href='/property'>Virginia</a></li>
+                    <li className='hidden'><a href='/property'>Washington</a></li>
+                    <li className='hidden'><a href='/property'>Massachusetts</a></li>
+                    <li className='hidden'><a href='/property'>Indiana</a></li>
+                    <li className='hidden'><a href='/property'>Arizona</a></li>
+                    <li className='hidden'><a href='/property'>Tennessee</a></li>
+                    <li className='hidden'><a href='/property'>Missouri</a></li>
+                    <li className='hidden'><a href='/property'>Maryland</a></li>
+                    <li className='hidden'><a href='/property'>Wisconsin</a></li>
+                    <li className='hidden'><a href='/property'>Minnesota</a></li>
+                    <li className='hidden'><a href='/property'>Colorado</a></li>
+                    <li className='hidden'><a href='/property'>Alabama</a></li>
+                    <li className='hidden'><a href='/property'>South Carolina</a></li>
+                    <li className='hidden'><a href='/property'>Louisiana</a></li>
+                    <li className='hidden'><a href='/property'>Kentucky</a></li>
+                    <li className='hidden'><a href='/property'>Oregon</a></li>
+                    <li className='hidden'><a href='/property'>Oklahoma</a></li>
+                    <li className='hidden'><a href='/property'>Connecticut</a></li>
+                    <li className='hidden'><a href='/property'>Iowa</a></li>
+                    <li className='hidden'><a href='/property'>Mississippi</a></li>
+                    <li className='hidden'><a href='/property'>Arkansas</a></li>
+                    <li className='hidden'><a href='/property'>Kansas</a></li>
+                    <li className='hidden'><a href='/property'>Utah</a></li>
+                    <li className='hidden'><a href='/property'>Nevada</a></li>
+                    <li className='hidden'><a href='/property'>New Mexico</a></li>
+                    <li className='hidden'><a href='/property'>West Virginia</a></li>
+                    <li className='hidden'><a href='/property'>Nebraska</a></li>
+                    <li className='hidden'><a href='/property'>Idaho</a></li>
+                    <li className='hidden'><a href='/property'>Hawaii</a></li>
+                    <li className='hidden'><a href='/property'>Maine</a></li>
+                    <li className='hidden'><a href='/property'>New Hampshire</a></li>
+                    <li className='hidden'><a href='/property'>Rhode Island</a></li>
+                    <li className='hidden'><a href='/property'>Montana</a></li>
+                    <li className='hidden'><a href='/property'>Delaware</a></li>
+                    <li className='hidden'><a href='/property'>South Dakota</a></li>
+                    <li className='hidden'><a href='/property'>Alaska</a></li>
+                    <li className='hidden'><a href='/property'>North Dakota</a></li>
+                    <li className='hidden'><a href='/property'>Vermont</a></li>
+                    <li className='hidden'><a href='/property'>Washington, DC</a></li>
+                    <li className='hidden'><a href='/property'>Wyoming</a></li>
+                    <li className='hidden'><a href='/property'>Puerto Rico</a></li>
+                    <li className='hidden'><a href='/property'>Virgin Islands</a></li>
                   </ul>
                   <button type='button' className='show-hide-link'>More</button>
                 </div>

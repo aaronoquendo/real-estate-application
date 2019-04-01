@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import HeroSearchBar from './HeroSearchBar'
 
 export default class HeroDisplayRent extends Component {
   constructor (props) {
@@ -46,22 +47,12 @@ export default class HeroDisplayRent extends Component {
                 </li>
               </ul>
             </div>
-            <form className='search-form'>
-              <div className='input-wrapper'>
-                <input type='text' autoComplete='off' aria-autocomplete='list' aria-controls='react-autowhatever-1' className='search-input'
-                       placeholder='Enter an address, neighborhood, city, or ZIP code' value='' />
-              </div>
-              <div className='searchBtnContainer'>
-                <button className='search-button'>
-                  <span className='searchBtnText'>Search</span>
-                </button>
-              </div>
-            </form>
+            <HeroSearchBar />
           </div>
 
           <div className='hero-footer'>
             <div className='hero-footer-container'>
-              <a className='upsell-main' href='/'>
+              <a className='upsell-main' href='/property'>
                 <img alt='Be ready to buy' className='icon' src='https://s.zillowstatic.com/homepage/static/upsell_list_a_rental.png' />
                 <strong>What can you afford?</strong>
                 <span>Use our rent calculator to find out.</span>

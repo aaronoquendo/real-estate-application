@@ -31,7 +31,7 @@ export default class Header extends Component {
             <a href='/property' className=''>Agent Finder</a>
           </nav>
           <div className='logo'>
-            <a href='/'><img src={require('../../assets/images/trillio-house.png')} style={{ width: '50px', height: '40px' }} /><span>Trillio</span></a>
+            <a href='/'><img src={require('../../assets/images/trillio-house.png')} style={{ width: '50px', height: '40px' }} alt='' /><span>Trillio</span></a>
           </div>
           <nav className='right-nav'>
             <a href='/property' className='nav-item-removed'>List your rental</a>
