@@ -16,12 +16,16 @@ html,
 .container {
   max-width: 100%;
 }
-
+.isActive{
+  display: block !important;
+}
 .hidden {
   display: none;
 }
 
+
 @import "../../../components/Header/header";
+@import "../../../components/Header/mobilemenu";
 @import "../../../components/FrontPage/HeroDisplay/heroDisplay";
 @import "../../../components/FrontPage/RegionInfoFooter/regionInfoFooter";
 @import "../../../components/FrontPage/BrandsFooter/brands-footer";
@@ -31,3 +35,5 @@ html,
 @import "content-area";
 
 @import "media-queries";
+
+

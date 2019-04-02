@@ -21,7 +21,7 @@ export default class HeroDisplayEstimate extends Component {
 
           <div className='search-container'>
             <header className='home-page-header'>
-              <h1 className='heading'>Get an Estimate</h1>
+              <h1 className='heading'>Get an estimate</h1>
             </header>
             <div className='home-page-tabs'>
               <ul>

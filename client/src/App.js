@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import Header from './components/Header/Header.js'
-import FrontPage from './components/FrontPage/FrontPage.js'
+import Header from './components/Header/Header'
+import MobileMenu from './components/Header/MobileMenu'
+import FrontPage from './components/FrontPage/FrontPage'
 import Finder from './components/Finder/Finder'
 
 import './assets/styles/css/bootstrap.min.css'
@@ -13,7 +14,8 @@ class App extends Component {
       <div className='App'>
         {/* LandingPage Routes */}
         <Route path='/' component={props => <Header {...props} />} />
-        <Route exact path={['/', '/buy', '/sell', '/rent', '/estimate']} component={props => <FrontPage {...props} />} />
+        <Route path='/' component={props => <MobileMenu {...props} />} />
+        <Route exact path={['/', '/buy', '/sell', '/rent', '/estimate']} component={props =>        <FrontPage {...props} />} />
 
         {/* Property Search Routes */}
         <Route exact path='/property' component={props => <Finder {...props} />} />

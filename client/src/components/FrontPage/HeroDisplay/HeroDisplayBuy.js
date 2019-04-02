@@ -20,7 +20,7 @@ export default class HeroDisplayBuy extends Component {
 
           <div className='search-container'>
             <header className='home-page-header'>
-              <h1 className='heading'>Find your way home</h1>
+              <h1 className='heading'>Find your next home</h1>
             </header>
             <div className='home-page-tabs'>
               <ul>

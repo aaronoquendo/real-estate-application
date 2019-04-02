@@ -10,14 +10,17 @@ export default class Header extends Component {
   }
   openMobileMenu () {
     let hamburgerIcon = document.querySelector('.hamburger.hamburger--slider')
+    let mobileMenu = document.querySelector('.mobile-menu')
     this.setState((state) => {
       hamburgerIcon.classList.toggle('is-active')
+      mobileMenu.classList.toggle('isActive')
       return { isMobileMenuOpen: !state.isMobileMenuOpen }
     })
   }
   render () {
     return (
       <div className='header-wrapper'>
+        <div className='nav-mask'></div>
         <header>
           <button id='header-hamburger-icon' className='hamburger hamburger--slider' type='button' onClick={this.openMobileMenu}>
             <span className='hamburger-box'>
