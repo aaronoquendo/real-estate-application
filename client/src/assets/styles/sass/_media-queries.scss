@@ -29,12 +29,16 @@
   .hero-wrapper .hero-footer .hero-footer-container {
     display: none;
   }
+  #filter{
+    display: none !important;
+  }
 
 }
 @media (min-width: 767.98px) {
   .mobile-menu {
     display: none !important;
   }
+
 }
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) {
