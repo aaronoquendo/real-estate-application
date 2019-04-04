@@ -6,8 +6,7 @@
 
 *,
 body,
-html,
-:after, :before {
+html {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
   // background: purple;
@@ -26,6 +25,7 @@ html,
 
 @import "../../../components/Header/header";
 @import "../../../components/Header/mobilemenu";
+@import "../../../components/MasterSearchContainer/searchbar";
 @import "../../../components/FrontPage/HeroDisplay/heroDisplay";
 @import "../../../components/FrontPage/RegionInfoFooter/regionInfoFooter";
 @import "../../../components/FrontPage/BrandsFooter/brands-footer";
@@ -35,5 +35,6 @@ html,
 @import "content-area";
 
 @import "media-queries";
+
 
 

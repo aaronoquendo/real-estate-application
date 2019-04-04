@@ -9,7 +9,7 @@ import RegionInfoFooter from './RegionInfoFooter/RegionInfoFooter'
 import BrandsFooter from './BrandsFooter/BrandsFooter'
 import Footer from './Footer/Footer'
 
-export default class FrontPage extends Component {
+export default class LandingPage extends Component {
   constructor (props) {
     super(props)
     this.state = {

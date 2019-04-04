@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import Filter from '../Filter.js'
-import Listings from '../Listings.js'
+import Filter from './Filter.js'
+import Listings from './Listings.js'
 import listingsData from '../../assets/data/listingsData.js'
 
-class Finder extends Component {
+class MasterSearchContainer extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -150,6 +150,7 @@ class Finder extends Component {
       <section id='content-area' >
         <div id='main-container' className='container'>
           <div className='row'>
+
             <Filter change={this.change} globalState={this.state} populateAction={this.populateForms} />
             <Listings listingsData={this.state.filteredData} change={this.change} globalState={this.state} changeView={this.changeView} />
           </div>
@@ -159,4 +160,4 @@ class Finder extends Component {
   }
 }
 
-export default Finder
+export default MasterSearchContainer
