@@ -19,11 +19,10 @@ export default class Header extends Component {
   }
   render () {
     const { pathname } = this.props.location
-    console.log(pathname);
     return (
-      <div className='header-wrapper' style={pathname !== '/property' ? null : { boxShadow: 'none'}}>
+      <div className='header-wrapper' style={pathname !== '/property' ? null : { boxShadow: 'none' }} >
         <div className='nav-mask' />
-        <header style={pathname !== '/property' ? null : { maxWidth: 'none'}}>
+        <header style={pathname !== '/property' ? null : { maxWidth: 'none' }}>
           <button id='header-hamburger-icon' className='hamburger hamburger--slider' type='button' onClick={this.openMobileMenu}>
             <span className='hamburger-box'>
               <span className='hamburger-inner' />

@@ -90,9 +90,11 @@
                 outline: none;
                 text-decoration: none;
                 cursor: pointer;
-                &:hover{
+
+                &:hover {
                   color: $maincolor1;
                 }
+
                 div {
                   padding: 0 10px;
                   font-size: 14px;
@@ -120,18 +122,21 @@
               }
 
             }
+
             .filter-pane {
               position: absolute;
               display: none;
               padding-top: 10px;
               padding-bottom: 10px;
               background-color: #fff;
-              box-shadow: 0 1px 4px 0 rgba(0,0,0,.5);
+              box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .5);
 
+              // Below is for the listing type filter pane
               #category-entries {
                 min-width: 90px;
                 padding-left: 12px;
                 padding-right: 12px;
+
                 .home-icons {
                   .listing-type {
                     line-height: 27px;
@@ -146,6 +151,7 @@
 
                       label {
                         cursor: pointer;
+
                         .icon-for-sale, .icon-for-rent, .icon-recently-sold {
                         }
 
@@ -166,30 +172,177 @@
 
                 }
               }
-              #only-entries{
+
+              #only-entries {
                 padding-left: 12px;
                 padding-right: 12px;
                 font-weight: 700;
                 user-select: none;
                 font-size: 14px;
                 cursor: pointer;
-                .only-entries-ul{
+
+                .only-entries-ul {
                   cursor: pointer;
-                  .only-entries-li{
+
+                  .only-entries-li {
                     user-select: none;
                     cursor: pointer;
                     line-height: 27px;
-                    .checkbox{}
+
+                    .checkbox {
+                    }
 
 
-                      label{
+                    label {
+                      cursor: pointer;
+
+                      .open-houses {
                         cursor: pointer;
-                        .open-houses{
-                          cursor: pointer;
-                        }
                       }
+                    }
 
                   }
+                }
+              }
+              // Below is the css for the price filter pane
+              .price-entries {
+                border-color: #A7A6AB;
+                border-style: solid;
+                border-width: 0 0 1px;
+
+                padding-bottom: 10px;
+                margin-bottom: 0;
+                .dualboxes {
+                  .box1, .box2{
+
+                    display: inline-block;
+                    width: 85px;
+                    background: 0 0;
+                    margin: 0 10px;
+
+                    input {
+                      width: 85px;
+                      height: 30px;
+                      padding: 4px 6px 2px;
+                      border: 1px solid #A7A6AB;
+                      background-color: #fff;
+                      box-shadow: inset 0 2px 2px #F9F9FB, 0 0 0 #62aef7;
+                      &:focus{
+
+
+
+                      }
+                    }
+                  }
+
+                  .dash {
+                    order: 0;
+                    color: #aaa;
+                    background-color: #aaa;
+                    display: inline-block;
+                    height: 1px;
+                    width: 10px;
+                    position: relative;
+                    vertical-align: middle;
+
+                  }
+
+                }
+              }
+              .filter-price{
+                #price-min-options {
+
+                }
+                #price-max-options {
+                  display: none;
+                 a{
+                   text-align: right;
+                 }
+                }
+                .price-options{
+                  .dropdown-options{
+                    li{
+                      .option{
+                        display: inline-block;
+                        line-height: normal;
+
+                        height: auto;
+                        width: 100%;
+                        padding: 10px;
+                        cursor: pointer;
+                        font-weight: 300;
+                        text-decoration: none;
+                        color: #333;
+                        font-size: 15.5px;
+                        outline: none;
+                        &:hover{
+                          background: $maincolor1;
+                          color: white;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+          }
+          .price-menu .filter-pane{
+            padding-bottom: 0;
+          }
+          .beds-menu .filter-pane{
+            padding: 0;
+            .search-entry{
+              min-width:90px;
+              .bed-options{
+                .selected{
+                  background: #62aef7;
+
+                  .option{
+                    color: #fff;
+
+                  }
+                }
+                li{
+                  .option{
+                    line-height: normal;
+                    font-size: 15px;
+                    outline: none;
+                    height: auto;
+                    width: 100%;
+                    display: block;
+                    padding: 10px;
+                    margin: 0;
+                    cursor: pointer;
+                    font-weight: 400;
+                    text-decoration: none;
+                    color: #333;
+                    &:hover{
+                      background: #006AFF;
+                      color: #FFF;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .home-type-menu .filter-pane{
+
+            .hometype-options{
+              li{
+                padding: 6px 12px;
+                line-height: 27px;
+                input{
+                  top: -2px;
+                  position: relative;
+                }
+                label{
+
+                  user-select: none;
+                  cursor: pointer;
+                  display: inline-block;
+                  padding-left: 10px;
                 }
               }
             }

@@ -21,7 +21,9 @@ html {
 .hidden {
   display: none;
 }
-
+.hide{
+  display: none ;
+}
 
 @import "../../../components/Header/header";
 @import "../../../components/Header/mobilemenu";

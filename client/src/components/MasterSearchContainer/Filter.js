@@ -32,7 +32,6 @@ export default class Filter extends Component {
   houseTypes () {
     if (this.props.globalState.populateFormsData.houseTypes !== undefined) {
       let { houseTypes } = this.props.globalState.populateFormsData
-      console.log(houseTypes)
       return houseTypes.map((item) => {
         return (
           <option key={item} value={item}>{item}</option>
@@ -45,7 +44,7 @@ export default class Filter extends Component {
   bedrooms () {
     if (this.props.globalState.populateFormsData.bedrooms !== undefined) {
       let { bedrooms } = this.props.globalState.populateFormsData
-      console.log(bedrooms)
+
       return bedrooms.map((item) => {
         return (
           <option key={item} value={item}>{item}+ BR</option>
