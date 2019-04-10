@@ -12,29 +12,46 @@ export default class SearchBar extends Component {
     const pricingPane = document.querySelector('.pricing-pane')
     const bedsPane = document.querySelector('.beds-pane')
     const houseTypePane = document.querySelector('.housetype-pane')
-
+    const moreMenuPane = document.querySelector('.more-pane')
 
     if (divId === 'listings-menu-label') {
       listingsMenuPane.classList.toggle('isActive')
       pricingPane.classList.remove('isActive')
       bedsPane.classList.remove('isActive')
       houseTypePane.classList.remove('isActive')
+      moreMenuPane.classList.remove('isActive')
+
     } else if (divId === 'price-menu-label') {
       pricingPane.classList.toggle('isActive')
       listingsMenuPane.classList.remove('isActive')
       bedsPane.classList.remove('isActive')
       houseTypePane.classList.remove('isActive')
+      moreMenuPane.classList.remove('isActive')
+
     } else if (divId === 'beds-menu-label') {
       bedsPane.classList.toggle('isActive')
       pricingPane.classList.remove('isActive')
       listingsMenuPane.classList.remove('isActive')
       houseTypePane.classList.remove('isActive')
+      moreMenuPane.classList.remove('isActive')
+
     } else if (divId === 'housetype-menu-label') {
       houseTypePane.classList.toggle('isActive')
       pricingPane.classList.remove('isActive')
       listingsMenuPane.classList.remove('isActive')
       bedsPane.classList.remove('isActive')
+      moreMenuPane.classList.remove('isActive')
+
+    } else if (divId === 'more-menu-label') {
+      moreMenuPane.classList.toggle('isActive')
+      houseTypePane.classList.remove('isActive')
+      pricingPane.classList.remove('isActive')
+      listingsMenuPane.classList.remove('isActive')
+      bedsPane.classList.remove('isActive')
+      
     }
+
+ 
   }
   render () {
     return (
@@ -277,12 +294,154 @@ export default class SearchBar extends Component {
                 <fieldset className='filter-menu more-menu'>
                   <legend data-za-label='More'>
                     <a className='menu-label' tabIndex='0'>
-                      <div> More <span id='applied-filter-count' />
+                      <div id="more-menu-label" onClick={() => this.menuItemClicked('more-menu-label')}> More 
+                      <span id='applied-filter-count' />
                         <i className='fas fa-sort-down' />
                         <i className='fas fa-sort-up' />
                       </div>
                     </a>
                   </legend>
+
+                  
+                  <div class="filter-pane more-pane" id="">
+                    <div id="baths-entries" class="search-entry">
+                      <div class="title">Baths</div>
+                      <div id="baths-dropdown" class="combobox custom-dropdown" tabindex="0">
+                        <span id="baths-readout" class="options-display" data-za-action="Baths">1.5+</span>
+                        <span class="icon-arrow-menu-down"></span>
+                        <ul id="bath-options" class="dropdown-options">
+                          <li data-value="0," id=""><a class="option" tabindex="-1">0+</a></li>
+                          <li data-value="1.0," id=""><a class="option" tabindex="-1">1+</a></li>
+                          <li data-value="1.5," id="" class="selected"><a class="option" tabindex="-1">1.5+</a></li>
+                          <li data-value="2.0,"><a class="option" tabindex="-1">2+</a></li>
+                          <li data-value="3.0,"><a class="option" tabindex="-1">3+</a></li>
+                          <li data-value="4.0,"><a class="option" tabindex="-1">4+</a></li>
+                          <li data-value="5.0,"><a class="option" tabindex="-1">5+</a></li>
+                          <li data-value="6.0,"><a class="option" tabindex="-1">6+</a></li>
+                        </ul>
+                      </div>
+                      <select id="baths-select" class="hide">
+                        <option value="0,">0+</option>
+                        <option value="1.0,">1+</option>
+                        <option value="1.5,">1.5+</option>
+                        <option value="2.0,">2+</option>
+                        <option value="3.0,">3+</option>
+                        <option value="4.0,">4+</option>
+                        <option value="5.0,">5+</option>
+                        <option value="6.0,">6+</option>
+                      </select>
+                    </div>
+                    <div id="sqft-entries" class="search-entry" data-za-label="Square Feet">
+                      <div class="title">Square Feet</div>
+                      <div class="dualboxes">
+                        <div class="box1"><input class="text commaFormat" maxlength="11" size="10" name="sqft-min" id="sqft-min" type="text" placeholder="Min" /></div>
+                        <div class="dash">&nbsp;</div>
+                        <div class="box2"><input class="text commaFormat" maxlength="11" size="11" name="sqft-max" id="sqft-max" type="text" placeholder="Max" /></div>
+                      </div>
+                    </div>
+                    <div id="lot-size-entries" class="search-entry">
+                      <div class="title">Lot Size</div>
+                      <div id="lot-min-dropdown" class="combobox custom-dropdown" data-dropdown-id="lot-size-select" tabindex="0">
+                        <span id="lot-size-select-readout" class="options-display" data-za-action="Change - Lot Size">Any</span><span class="icon-arrow-menu-down"></span>
+                        <ul id="lot-size-select-options" class="">
+                          <li data-value="0," id="" class="selected"><a class="option" tabindex="-1">Any</a></li>
+                          <li data-value="2000,"><a class="option" tabindex="-1">2,000+ sqft</a></li>
+                          <li data-value="3000,"><a class="option" tabindex="-1">3,000+ sqft</a></li>
+                          <li data-value="4000,"><a class="option" tabindex="-1">4,000+ sqft</a></li>
+                          <li data-value="5000,"><a class="option" tabindex="-1">5,000+ sqft</a></li>
+                          <li data-value="7500,"><a class="option" tabindex="-1">7,500+ sqft</a></li>
+                          <li data-value="10890,"><a class="option" tabindex="-1">.25+ acre / 10,890+ sqft</a></li>
+                          <li data-value="21780,"><a class="option" tabindex="-1">.5+ acre / 21,780+ sqft</a></li>
+                          <li data-value="43560,"><a class="option" tabindex="-1">1+ acre</a></li>
+                          <li data-value="87120,"><a class="option" tabindex="-1">2+ acres</a></li>
+                          <li data-value="217800,"><a class="option" tabindex="-1">5+ acres</a></li>
+                          <li data-value="435600,"><a class="option" tabindex="-1">10+ acres</a></li>
+                          <li data-value="custom"><a class="option" tabindex="-1">Custom size</a></li>
+                        </ul>
+                      </div>
+                      <select id="lot-size-select" class="hide">
+                        <option value="0,">Any</option>
+                        <option value="2000,">2,000+ sqft</option>
+                        <option value="3000,">3,000+ sqft</option>
+                        <option value="4000,">4,000+ sqft</option>
+                        <option value="5000,">5,000+ sqft</option>
+                        <option value="7500,">7,500+ sqft</option>
+                        <option value="10890,">.25+ acre / 10,890+ sqft</option>
+                        <option value="21780,">.5+ acre / 21,780+ sqft</option>
+                        <option value="43560,">1+ acre</option>
+                        <option value="87120,">2+ acres</option>
+                        <option value="217800,">5+ acres</option>
+                        <option value="435600,">10+ acres</option>
+                      </select>
+                      <div id="custom-lot-size-entries" class="hide">
+                        <div class="title">
+                          <ul class="form-group radio-buttons">
+                            <li><input type="radio" id="custom-lot-sqft" name="lot_custom" class="radio custom-lot" value="sqft" checked="true" />
+                              <label for="custom-lot-sqft">Sqft</label>
+                            </li>
+                            <li>
+                              <input type="radio" id="custom-lot-acre" name="lot_custom" class="radio custom-lot" value="acre" /><label for="custom-lot-acre">Acre</label>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="dualboxes">
+                          <div class="box1">
+                            <input class="text custom-lot" maxlength="11" size="10" name="custom-lot-min" id="custom-lot-min" type="text" placeholder="Min" />
+                          </div>
+                          <div class="dash">&nbsp;</div>
+                          <div class="box2">
+                            <input class="text custom-lot" maxlength="11" size="11" name="custom-lot-max" id="custom-lot-max" type="text" placeholder="Max" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="yearbuilt-entries" class="search-entry" data-za-label="Year Built">
+                      <div class="title">Year Built</div>
+                      <div class="dualboxes">
+                        <div class="box1"><input class="text" maxlength="4" size="10" name="year-built-min" id="year-built-min" type="text" placeholder="Min" /></div>
+                        <div class="dash">&nbsp;</div>
+                        <div class="box2"><input class="text" maxlength="4" size="11" name="year-built-max" id="year-built-max" type="text" placeholder="Max" /></div>
+                      </div>
+                    </div>
+                    <div id="days-entries" class="search-entry">
+                      <div id="days-on-title" class="title">Days on Zillow</div>
+                      <div id="days-dropdown" class="combobox custom-dropdown" data-dropdown-id="days-on-select" tabindex="0">
+                        <span id="days-readout" class="options-display" data-za-action="Days on Zillow">14 days</span>
+                        <div class="dropdown-handle">
+                          <span class="icon-arrow-menu-down"></span>
+                        </div>
+                        <ul id="days-options" class="dropdown-options combobox-options zsg-menu-linklist">
+                          <li data-value="any" id=""><a class="option" tabindex="-1">Any</a></li>
+                          <li data-value="1" id=""><a class="option" tabindex="-1">1 day</a></li>
+                          <li data-value="7" id=""><a class="option" tabindex="-1">7 days</a></li>
+                          <li data-value="14" id="" class="selected"><a class="option" tabindex="-1">14 days</a></li>
+                          <li data-value="30"><a class="option" tabindex="-1">30 days</a></li>
+                          <li data-value="90"><a class="option" tabindex="-1">90 days</a></li>
+                          <li data-value="6m"><a class="option" tabindex="-1">6 months</a></li>
+                          <li data-value="12m"><a class="option" tabindex="-1">12 months</a></li>
+                          <li data-value="24m"><a class="option" tabindex="-1">24 months</a></li>
+                          <li data-value="36m"><a class="option" tabindex="-1">36 months</a></li>
+                        </ul>
+                      </div>
+                      <select id="days-on-select" class="hide">
+                        <option value="any">Any</option>
+                        <option value="1">1 day</option>
+                        <option value="7">7 days</option>
+                        <option value="14">14 days</option>
+                        <option value="30">30 days</option>
+                        <option value="90">90 days</option>
+                        <option value="6m">6 months</option>
+                        <option value="12m">12 months</option>
+                        <option value="24m">24 months</option>
+                        <option value="36m">36 months</option>
+                      </select>
+                    </div>
+                    <div id="attribute-entry" class="search-entry">
+                      <div class="title">Keywords</div>
+                      <textarea id="attribute-terms" placeholder="Garage, pool, waterfront, etc."></textarea>
+                    </div>
+                    <a class="button_primary" rel="nofollow" id="filterSearchButton" onClick="return false;" title="Search"><span> Apply </span></a>
+                  </div>
                 </fieldset>
               </form>
             </div>

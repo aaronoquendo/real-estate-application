@@ -4,6 +4,7 @@ var listingsData = [
     city: 'Miami',
     state: 'NY',
     rooms: 1,
+    baths: 2,
     price: 220000,
     floorSpace:2000,
     extras: [
@@ -18,6 +19,7 @@ var listingsData = [
       city: 'Jackson',
       state: 'OR',
       rooms: 0,
+      baths: 2,
       price: 50000,
       floorSpace:700,
       extras: [
@@ -32,6 +34,7 @@ var listingsData = [
       city: 'Chicago',
       state: 'IL',
       rooms: 3,
+      baths: 2,
       price: 220000,
       floorSpace:2500,
       extras: [
@@ -46,6 +49,7 @@ var listingsData = [
       city: 'Staten Island',
       state: 'NY',
       rooms: 3,
+      baths: 2,
       price: 300000,
       floorSpace:1400,
       extras: [
@@ -60,6 +64,7 @@ var listingsData = [
       city: 'Miami',
       state: 'Fl',
       rooms: 3,
+      baths: 2,
       price: 160000,
       floorSpace:2000,
       extras: [
@@ -74,6 +79,7 @@ var listingsData = [
       city: 'Staten Island',
       state: 'NY',
       rooms: 2,
+      baths: 2,
       price: 100000,
       floorSpace:2000,
       extras: [
@@ -88,6 +94,7 @@ var listingsData = [
       city: 'Dreamtown',
       state: 'NJ',
       rooms: 1,
+      baths: 2,
       price: 100000,
       floorSpace:2000,
       extras: [
