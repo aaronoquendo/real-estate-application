@@ -83,13 +83,13 @@ class SearchBar extends Component {
 
     this.setState({
       [name]: value
-    },() => {
-      const properties = this.props.allProperties
-      const filterCriteria = this.state
-      this.props.filterProperties(properties, filterCriteria);
     });
 
+    const filterCriteria = this.state
+    this.props.filterProperties(listingsData, filterCriteria)
+
   }
+  
   render () {
     console.log("searchbar state",this.state);
     return (

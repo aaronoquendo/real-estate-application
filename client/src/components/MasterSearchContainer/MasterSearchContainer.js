@@ -51,12 +51,13 @@ class MasterSearchContainer extends Component {
   
     this.setState({
       [name]: value
-
-    }, () => {
-        const filterCriteria = this.state
-
-      this.props.filterProperties(listingsData, filterCriteria)
     })
+
+    const filter = () => {
+      const filterCriteria = this.state
+      this.props.filterProperties(listingsData, filterCriteria)
+    }
+    filter()
   }
 
   // Function to change the view of the listings

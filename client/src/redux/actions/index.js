@@ -4,17 +4,19 @@ import {
 } from './types'
 
 //Loading properties into the global state
-export const loadProperties = (properties) => ({
-  type: LOAD_PROPERTIES,
-  payload: {
-    properties
-  },
-
-});
+export const loadProperties = (properties) => {
+  console.log("load props",properties);
+  return{
+    type: LOAD_PROPERTIES,
+    payload: {
+      properties
+    },
+  }
+};
 
 //Sorting properties based on the users input
 export const filterProperties = (properties, filterSettings) => {
-
+ 
   return{
     type: FILTER_PROPERTIES,
     payload: {
