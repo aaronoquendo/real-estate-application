@@ -1,12 +1,35 @@
 import React, { Component } from 'react'
-
-export default class SearchBar extends Component {
+import { connect }  from 'react-redux'
+import { loadProperties, filterProperties } from "../../redux/actions";
+import listingsData from '../../assets/data/listingsData.js'
+class SearchBar extends Component {
   constructor (props) {
     super(props)
     this.state = {
-
+      properties: [],
+      search: '',
+      city: 'All',
+      listingType: 'All',
+      houseType: 'All',
+      bedrooms: '1',
+      min_price: 0,
+      max_price: 10000000,
+      min_floor_space: 0,
+      max_floor_space: 50000,
+      elevator: false,
+      swimming_pool: false,
+      finished_basement: false,
+      gym: false,
+      isForSale: true,
+      isForRent: false,
+      wasSold: false,
     }
   }
+  componentWillMount () {
+    this.props.loadProperties(listingsData)
+    this.setState({properties: this.props.properties})
+  }
+  
   menuItemClicked (divId) {
     const listingsMenuPane = document.querySelector('.listings-menu-pane')
     const pricingPane = document.querySelector('.pricing-pane')
@@ -51,9 +74,24 @@ export default class SearchBar extends Component {
       
     }
 
- 
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    },() => {
+      const properties = this.props.allProperties
+      const filterCriteria = this.state
+      this.props.filterProperties(properties, filterCriteria);
+    });
+
   }
   render () {
+    console.log("searchbar state",this.state);
     return (
       <div id='search-bar-container' className=''>
         <ul className='toolbar-left'>
@@ -74,7 +112,7 @@ export default class SearchBar extends Component {
               <form id='searchfilters' className='zsg-form'>
                 <fieldset className='filter-menu listings-menu'>
                   <legend>
-                    <a className='menu-label' tabIndex='0'>
+                    <a href="#/" className='menu-label' tabIndex='0'>
                       <div id='listings-menu-label' onClick={() => this.menuItemClicked('listings-menu-label')}>
                         <span className='zsg-icon-for-sale'>&nbsp;</span>
                         <span className='zsg-icon-pre-market'>&nbsp;</span>Listing Type
@@ -89,7 +127,12 @@ export default class SearchBar extends Component {
                       <ul className='home-icons'>
                         <li id='fs-listings' className='listing-type'>
                           <div className='listing-category'>
-                            <input id='fs-listings-input' type='checkbox' className='checkbox' />
+                            <input id='fs-listings-input'  
+                            className='checkbox' 
+                            name='isForSale' 
+                            type='checkbox' 
+                            checked={this.state.isForSale} 
+                            onClick={(event) => this.handleInputChange(event)}/>
                             <label htmlFor='fs-listings-input'>
                               <span className='icon-for-sale'>&nbsp;</span><span className='listing-type-text'>For Sale </span>
                               <span id='fs-listings-resultCountWrapper'>(44)</span>
@@ -98,16 +141,16 @@ export default class SearchBar extends Component {
                         </li>
                         <li id='fr-listings' className='listing-type'>
                           <div className='listing-category'>
-                            <input id='fr-listings-input' type='checkbox' className='checkbox' />
+                            <input id='fr-listings-input' type='checkbox' className='checkbox' name='isForRent' checked={this.state.isForRent} onClick={(event) => this.handleInputChange(event)}/>
                             <label htmlFor='fr-listings-input'>
-                              <span className='icon-for-rent'>&nbsp;</span><span className='listing-type-text'>For Rent </span>
+                              <span className='icon-for-rent'>&nbsp;</span><span className='listing-type-text' >For Rent </span>
                               <span id='fr-listings-resultCountWrapper'>(11)</span>
                             </label>
                           </div>
                         </li>
                         <li id='rs-listings' className='listing-type'>
                           <div className='listing-category'>
-                            <input id='rs-listings-input' className='checkbox' type='checkbox' />
+                            <input id='rs-listings-input' className='checkbox' name='wasSold' type='checkbox' checked={this.state.wasSold} onClick={(event) => this.handleInputChange(event)}/>
                             <label htmlFor='rs-listings-input'>
                               <span className='icon-recently-sold'>&nbsp;</span>
                               <span className='listing-type-text'>Recently Sold </span>
@@ -133,7 +176,7 @@ export default class SearchBar extends Component {
                 </fieldset>
                 <fieldset className='filter-menu affordability-menu price-menu'>
                   <legend data-za-label='Price'>
-                    <a id='menu-label' className='menu-label' tabIndex='0' >
+                    <a href="#/" id='menu-label' className='menu-label' tabIndex='0' >
                       <div id='price-menu-label' onClick={() => this.menuItemClicked('price-menu-label')}> Any Price <span className='zsg-icon-arrow-menu-down' />
                         <i className='fas fa-sort-down' />
                         <i className='fas fa-sort-up' />
@@ -160,31 +203,31 @@ export default class SearchBar extends Component {
                       <div id='price-min-options' className='price-options min-price-options custom-dropdown'
                         data-dropdown-id='price-min'>
                         <ul className='dropdown-options search-entry menu-linklist'>
-                          <li data-value=''><a className='option' tabIndex='0'>0</a></li>
-                          <li data-value='50,000'><a className='option' tabIndex='0'>$50,000+</a></li>
-                          <li data-value='75,000'><a className='option' tabIndex='0'>$75,000+</a></li>
-                          <li data-value='100,000'><a className='option' tabIndex='0'>$100,000+</a></li>
-                          <li data-value='150,000'><a className='option' tabIndex='0'>$150,000+</a></li>
-                          <li data-value='200,000'><a className='option' tabIndex='0'>$200,000+</a></li>
-                          <li data-value='250,000'><a className='option' tabIndex='0'>$250,000+</a></li>
-                          <li data-value='300,000'><a className='option' tabIndex='0'>$300,000+</a></li>
-                          <li data-value='400,000'><a className='option' tabIndex='0'>$400,000+</a></li>
-                          <li data-value='500,000'><a className='option' tabIndex='0'>$500,000+</a></li>
+                          <li data-value=''><a href="#/" className='option' tabIndex='0'>0</a></li>
+                          <li data-value='50,000'><a href="#/" className='option' tabIndex='0'>$50,000+</a></li>
+                          <li data-value='75,000'><a href="#/" className='option' tabIndex='0'>$75,000+</a></li>
+                          <li data-value='100,000'><a href="#/" className='option' tabIndex='0'>$100,000+</a></li>
+                          <li data-value='150,000'><a href="#/" className='option' tabIndex='0'>$150,000+</a></li>
+                          <li data-value='200,000'><a href="#/" className='option' tabIndex='0'>$200,000+</a></li>
+                          <li data-value='250,000'><a href="#/" className='option' tabIndex='0'>$250,000+</a></li>
+                          <li data-value='300,000'><a href="#/" className='option' tabIndex='0'>$300,000+</a></li>
+                          <li data-value='400,000'><a href="#/" className='option' tabIndex='0'>$400,000+</a></li>
+                          <li data-value='500,000'><a href="#/" className='option' tabIndex='0'>$500,000+</a></li>
                         </ul>
                       </div>
                       <div id='price-max-options' className='price-options max-price-options custom-dropdown hide'
                         data-dropdown-id='price-max'>
                         <ul className='dropdown-options search-entry menu-linklist'>
-                          <li data-value='100,000'><a className='option' tabIndex='0'>$100,000</a></li>
-                          <li data-value='200,000'><a className='option' tabIndex='0'>$200,000</a></li>
-                          <li data-value='300,000'><a className='option' tabIndex='0'>$300,000</a></li>
-                          <li data-value='400,000'><a className='option' tabIndex='0'>$400,000</a></li>
-                          <li data-value='500,000'><a className='option' tabIndex='0'>$500,000</a></li>
-                          <li data-value='600,000'><a className='option' tabIndex='0'>$600,000</a></li>
-                          <li data-value='700,000'><a className='option' tabIndex='0'>$700,000</a></li>
-                          <li data-value='800,000'><a className='option' tabIndex='0'>$800,000</a></li>
-                          <li data-value='900,000'><a className='option' tabIndex='0'>$900,000</a></li>
-                          <li data-value=''><a className='option' tabIndex='0'>Any Price</a></li>
+                          <li data-value='100,000'><a href="#/"  className='option' tabIndex='0'>$100,000</a></li>
+                          <li data-value='200,000'><a href="#/"  className='option' tabIndex='0'>$200,000</a></li>
+                          <li data-value='300,000'><a href="#/"  className='option' tabIndex='0'>$300,000</a></li>
+                          <li data-value='400,000'><a href="#/"  className='option' tabIndex='0'>$400,000</a></li>
+                          <li data-value='500,000'><a href="#/"  className='option' tabIndex='0'>$500,000</a></li>
+                          <li data-value='600,000'><a href="#/"  className='option' tabIndex='0'>$600,000</a></li>
+                          <li data-value='700,000'><a href="#/" className='option' tabIndex='0'>$700,000</a></li>
+                          <li data-value='800,000'><a href="#/"  className='option' tabIndex='0'>$800,000</a></li>
+                          <li data-value='900,000'><a href="#/"  className='option' tabIndex='0'>$900,000</a></li>
+                          <li data-value=''><a href="#/"  className='option' tabIndex='0'>Any Price</a></li>
                         </ul>
                       </div>
                     </div>
@@ -194,7 +237,7 @@ export default class SearchBar extends Component {
 
                 <fieldset data-dropdown-id='beds-select' className='filter-menu beds-menu custom-dropdown' id=''>
                   <legend data-za-label='Beds'>
-                    <a id='' className='menu-label' tabIndex='0'>
+                    <a href="#/"  id='' className='menu-label' tabIndex='0'>
                       <div id='beds-menu-label' onClick={() => this.menuItemClicked('beds-menu-label')}>
                         <span className='options-display' data-za-action='Beds'>0+</span> Beds
                         <i className='fas fa-sort-down' />
@@ -206,13 +249,13 @@ export default class SearchBar extends Component {
                   <div className='filter-pane beds-pane' >
                     <div id='beds-entries' className='search-entry'>
                       <ul id='bed-options' className='bed-options dropdown-options menu-linklist'>
-                        <li data-value='0,' id='' className=''><a className='option' tabIndex='0'>0+</a></li>
-                        <li data-value='1,' id='' className=''><a className='option' tabIndex='0'>1+</a></li>
-                        <li data-value='2,' id='' className=''><a className='option' tabIndex='0'>2+</a></li>
-                        <li data-value='3,' id='' className=''><a className='option' tabIndex='0'>3+</a></li>
-                        <li data-value='4,' id='' className=''><a className='option' tabIndex='0'>4+</a></li>
-                        <li data-value='5,' id='' className=''><a className='option' tabIndex='0'>5+</a></li>
-                        <li data-value='6,' id='' className=''><a className='option' tabIndex='0'>6+</a></li>
+                        <li data-value='0,' id='' className=''><a href="#/"  className='option' tabIndex='0'>0+</a></li>
+                        <li data-value='1,' id='' className=''><a href="#/"  className='option' tabIndex='0'>1+</a></li>
+                        <li data-value='2,' id='' className=''><a href="#/"  className='option' tabIndex='0'>2+</a></li>
+                        <li data-value='3,' id='' className=''><a href="#/"  className='option' tabIndex='0'>3+</a></li>
+                        <li data-value='4,' id='' className=''><a href="#/"  className='option' tabIndex='0'>4+</a></li>
+                        <li data-value='5,' id='' className=''><a href="#/"  className='option' tabIndex='0'>5+</a></li>
+                        <li data-value='6,' id='' className=''><a href="#/"  className='option' tabIndex='0'>6+</a></li>
                       </ul>
                       <select id='beds-select' className='hide'>
                         <option value='0,'>0+</option>
@@ -229,7 +272,7 @@ export default class SearchBar extends Component {
                 </fieldset>
                 <fieldset className='filter-menu home-type-menu hometype-standalone custom-dropdown home-type-dropdown'>
                   <legend data-za-label='Home Type'>
-                    <a id='' className='menu-label' tabIndex='0'>
+                    <a href="#/"  id='' className='menu-label' tabIndex='0'>
                       <div id='housetype-menu-label' onClick={() => this.menuItemClicked('housetype-menu-label')}> Home Type <span id='hometype-count' />
                         <i className='fas fa-sort-down' />
                         <i className='fas fa-sort-up' />
@@ -293,7 +336,7 @@ export default class SearchBar extends Component {
 
                 <fieldset className='filter-menu more-menu'>
                   <legend data-za-label='More'>
-                    <a className='menu-label' tabIndex='0'>
+                    <a href="#/" className='menu-label' tabIndex='0'>
                       <div id="more-menu-label" onClick={() => this.menuItemClicked('more-menu-label')}> More 
                       <span id='applied-filter-count' />
                         <i className='fas fa-sort-down' />
@@ -303,24 +346,24 @@ export default class SearchBar extends Component {
                   </legend>
 
                   
-                  <div class="filter-pane more-pane" id="">
-                    <div id="baths-entries" class="search-entry">
-                      <div class="title">Baths</div>
-                      <div id="baths-dropdown" class="combobox custom-dropdown" tabindex="0">
-                        <span id="baths-readout" class="options-display" data-za-action="Baths">1.5+</span>
-                        <span class="icon-arrow-menu-down"></span>
-                        <ul id="bath-options" class="dropdown-options">
-                          <li data-value="0," id=""><a class="option" tabindex="-1">0+</a></li>
-                          <li data-value="1.0," id=""><a class="option" tabindex="-1">1+</a></li>
-                          <li data-value="1.5," id="" class="selected"><a class="option" tabindex="-1">1.5+</a></li>
-                          <li data-value="2.0,"><a class="option" tabindex="-1">2+</a></li>
-                          <li data-value="3.0,"><a class="option" tabindex="-1">3+</a></li>
-                          <li data-value="4.0,"><a class="option" tabindex="-1">4+</a></li>
-                          <li data-value="5.0,"><a class="option" tabindex="-1">5+</a></li>
-                          <li data-value="6.0,"><a class="option" tabindex="-1">6+</a></li>
+                  <div className="filter-pane more-pane" id="">
+                    <div id="baths-entries" className="search-entry">
+                      <div className="title">Baths</div>
+                      <div id="baths-dropdown" className="combobox custom-dropdown" tabIndex="0">
+                        <span id="baths-readout" className="options-display" data-za-action="Baths">1.5+</span>
+                        <span className="icon-arrow-menu-down"></span>
+                        <ul id="bath-options" className="dropdown-options">
+                          <li data-value="0," id=""><a href="#/"  className="option" tabIndex="-1">0+</a></li>
+                          <li data-value="1.0," id=""><a href="#/"  className="option" tabIndex="-1">1+</a></li>
+                          <li data-value="1.5," id="" className="selected"><a href="#/" className="option" tabIndex="-1">1.5+</a></li>
+                          <li data-value="2.0,"><a href="#/"  className="option" tabIndex="-1">2+</a></li>
+                          <li data-value="3.0,"><a href="#/" className="option" tabIndex="-1">3+</a></li>
+                          <li data-value="4.0,"><a href="#/" className="option" tabIndex="-1">4+</a></li>
+                          <li data-value="5.0,"><a href="#/" className="option" tabIndex="-1">5+</a></li>
+                          <li data-value="6.0,"><a href="#/" className="option" tabIndex="-1">6+</a></li>
                         </ul>
                       </div>
-                      <select id="baths-select" class="hide">
+                      <select id="baths-select" className="hide">
                         <option value="0,">0+</option>
                         <option value="1.0,">1+</option>
                         <option value="1.5,">1.5+</option>
@@ -331,35 +374,35 @@ export default class SearchBar extends Component {
                         <option value="6.0,">6+</option>
                       </select>
                     </div>
-                    <div id="sqft-entries" class="search-entry" data-za-label="Square Feet">
-                      <div class="title">Square Feet</div>
-                      <div class="dualboxes">
-                        <div class="box1"><input class="text commaFormat" maxlength="11" size="10" name="sqft-min" id="sqft-min" type="text" placeholder="Min" /></div>
-                        <div class="dash">&nbsp;</div>
-                        <div class="box2"><input class="text commaFormat" maxlength="11" size="11" name="sqft-max" id="sqft-max" type="text" placeholder="Max" /></div>
+                    <div id="sqft-entries" className="search-entry" data-za-label="Square Feet">
+                      <div className="title">Square Feet</div>
+                      <div className="dualboxes">
+                        <div className="box1"><input className="text commaFormat" maxLength="11" size="10" name="sqft-min" id="sqft-min" type="text" placeholder="Min" /></div>
+                        <div className="dash">&nbsp;</div>
+                        <div className="box2"><input className="text commaFormat" maxLength="11" size="11" name="sqft-max" id="sqft-max" type="text" placeholder="Max" /></div>
                       </div>
                     </div>
-                    <div id="lot-size-entries" class="search-entry">
-                      <div class="title">Lot Size</div>
-                      <div id="lot-min-dropdown" class="combobox custom-dropdown" data-dropdown-id="lot-size-select" tabindex="0">
-                        <span id="lot-size-select-readout" class="options-display" data-za-action="Change - Lot Size">Any</span><span class="icon-arrow-menu-down"></span>
-                        <ul id="lot-size-select-options" class="">
-                          <li data-value="0," id="" class="selected"><a class="option" tabindex="-1">Any</a></li>
-                          <li data-value="2000,"><a class="option" tabindex="-1">2,000+ sqft</a></li>
-                          <li data-value="3000,"><a class="option" tabindex="-1">3,000+ sqft</a></li>
-                          <li data-value="4000,"><a class="option" tabindex="-1">4,000+ sqft</a></li>
-                          <li data-value="5000,"><a class="option" tabindex="-1">5,000+ sqft</a></li>
-                          <li data-value="7500,"><a class="option" tabindex="-1">7,500+ sqft</a></li>
-                          <li data-value="10890,"><a class="option" tabindex="-1">.25+ acre / 10,890+ sqft</a></li>
-                          <li data-value="21780,"><a class="option" tabindex="-1">.5+ acre / 21,780+ sqft</a></li>
-                          <li data-value="43560,"><a class="option" tabindex="-1">1+ acre</a></li>
-                          <li data-value="87120,"><a class="option" tabindex="-1">2+ acres</a></li>
-                          <li data-value="217800,"><a class="option" tabindex="-1">5+ acres</a></li>
-                          <li data-value="435600,"><a class="option" tabindex="-1">10+ acres</a></li>
-                          <li data-value="custom"><a class="option" tabindex="-1">Custom size</a></li>
+                    <div id="lot-size-entries" className="search-entry">
+                      <div className="title">Lot Size</div>
+                      <div id="lot-min-dropdown" className="combobox custom-dropdown" data-dropdown-id="lot-size-select" tabIndex="0">
+                        <span id="lot-size-select-readout" className="options-display" data-za-action="Change - Lot Size">Any</span><span className="icon-arrow-menu-down"></span>
+                        <ul id="lot-size-select-options" className="">
+                          <li data-value="0," id="" className="selected"><a href="#/" className="option" tabIndex="-1">Any</a></li>
+                          <li data-value="2000,"><a href="#/" className="option" tabIndex="-1">2,000+ sqft</a></li>
+                          <li data-value="3000,"><a href="#/" className="option" tabIndex="-1">3,000+ sqft</a></li>
+                          <li data-value="4000,"><a href="#/" className="option" tabIndex="-1">4,000+ sqft</a></li>
+                          <li data-value="5000,"><a href="#/" className="option" tabIndex="-1">5,000+ sqft</a></li>
+                          <li data-value="7500,"><a href="#/" className="option" tabIndex="-1">7,500+ sqft</a></li>
+                          <li data-value="10890,"><a href="#/" className="option" tabIndex="-1">.25+ acre / 10,890+ sqft</a></li>
+                          <li data-value="21780,"><a href="#/" className="option" tabIndex="-1">.5+ acre / 21,780+ sqft</a></li>
+                          <li data-value="43560,"><a href="#/" className="option" tabIndex="-1">1+ acre</a></li>
+                          <li data-value="87120,"><a href="#/" className="option" tabIndex="-1">2+ acres</a></li>
+                          <li data-value="217800,"><a href="#/" className="option" tabIndex="-1">5+ acres</a></li>
+                          <li data-value="435600,"><a href="#/" className="option" tabIndex="-1">10+ acres</a></li>
+                          <li data-value="custom"><a href="#/" className="option" tabIndex="-1">Custom size</a></li>
                         </ul>
                       </div>
-                      <select id="lot-size-select" class="hide">
+                      <select id="lot-size-select" className="hide">
                         <option value="0,">Any</option>
                         <option value="2000,">2,000+ sqft</option>
                         <option value="3000,">3,000+ sqft</option>
@@ -373,57 +416,57 @@ export default class SearchBar extends Component {
                         <option value="217800,">5+ acres</option>
                         <option value="435600,">10+ acres</option>
                       </select>
-                      <div id="custom-lot-size-entries" class="hide">
-                        <div class="title">
-                          <ul class="form-group radio-buttons">
-                            <li><input type="radio" id="custom-lot-sqft" name="lot_custom" class="radio custom-lot" value="sqft" checked="true" />
-                              <label for="custom-lot-sqft">Sqft</label>
+                      <div id="custom-lot-size-entries" className="hide">
+                        <div className="title">
+                          <ul className="form-group radio-buttons">
+                            <li><input type="radio" id="custom-lot-sqft" name="lot_custom" className="radio custom-lot" value="sqft"  />
+                              <label htmlFor="custom-lot-sqft">Sqft</label>
                             </li>
                             <li>
-                              <input type="radio" id="custom-lot-acre" name="lot_custom" class="radio custom-lot" value="acre" /><label for="custom-lot-acre">Acre</label>
+                              <input type="radio" id="custom-lot-acre" name="lot_custom" className="radio custom-lot" value="acre" /><label htmlFor="custom-lot-acre">Acre</label>
                             </li>
                           </ul>
                         </div>
-                        <div class="dualboxes">
-                          <div class="box1">
-                            <input class="text custom-lot" maxlength="11" size="10" name="custom-lot-min" id="custom-lot-min" type="text" placeholder="Min" />
+                        <div className="dualboxes">
+                          <div className="box1">
+                            <input className="text custom-lot" maxLength="11" size="10" name="custom-lot-min" id="custom-lot-min" type="text" placeholder="Min" />
                           </div>
-                          <div class="dash">&nbsp;</div>
-                          <div class="box2">
-                            <input class="text custom-lot" maxlength="11" size="11" name="custom-lot-max" id="custom-lot-max" type="text" placeholder="Max" />
+                          <div className="dash">&nbsp;</div>
+                          <div className="box2">
+                            <input className="text custom-lot" maxLength="11" size="11" name="custom-lot-max" id="custom-lot-max" type="text" placeholder="Max" />
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div id="yearbuilt-entries" class="search-entry" data-za-label="Year Built">
-                      <div class="title">Year Built</div>
-                      <div class="dualboxes">
-                        <div class="box1"><input class="text" maxlength="4" size="10" name="year-built-min" id="year-built-min" type="text" placeholder="Min" /></div>
-                        <div class="dash">&nbsp;</div>
-                        <div class="box2"><input class="text" maxlength="4" size="11" name="year-built-max" id="year-built-max" type="text" placeholder="Max" /></div>
+                    <div id="yearbuilt-entries" className="search-entry" data-za-label="Year Built">
+                      <div className="title">Year Built</div>
+                      <div className="dualboxes">
+                        <div className="box1"><input className="text" maxLength="4" size="10" name="year-built-min" id="year-built-min" type="text" placeholder="Min" /></div>
+                        <div className="dash">&nbsp;</div>
+                        <div className="box2"><input className="text" maxLength="4" size="11" name="year-built-max" id="year-built-max" type="text" placeholder="Max" /></div>
                       </div>
                     </div>
-                    <div id="days-entries" class="search-entry">
-                      <div id="days-on-title" class="title">Days on Zillow</div>
-                      <div id="days-dropdown" class="combobox custom-dropdown" data-dropdown-id="days-on-select" tabindex="0">
-                        <span id="days-readout" class="options-display" data-za-action="Days on Zillow">14 days</span>
-                        <div class="dropdown-handle">
-                          <span class="icon-arrow-menu-down"></span>
+                    <div id="days-entries" className="search-entry">
+                      <div id="days-on-title" className="title">Days on Zillow</div>
+                      <div id="days-dropdown" className="combobox custom-dropdown" data-dropdown-id="days-on-select" tabIndex="0">
+                        <span id="days-readout" className="options-display" data-za-action="Days on Zillow">14 days</span>
+                        <div className="dropdown-handle">
+                          <span className="icon-arrow-menu-down"></span>
                         </div>
-                        <ul id="days-options" class="dropdown-options combobox-options zsg-menu-linklist">
-                          <li data-value="any" id=""><a class="option" tabindex="-1">Any</a></li>
-                          <li data-value="1" id=""><a class="option" tabindex="-1">1 day</a></li>
-                          <li data-value="7" id=""><a class="option" tabindex="-1">7 days</a></li>
-                          <li data-value="14" id="" class="selected"><a class="option" tabindex="-1">14 days</a></li>
-                          <li data-value="30"><a class="option" tabindex="-1">30 days</a></li>
-                          <li data-value="90"><a class="option" tabindex="-1">90 days</a></li>
-                          <li data-value="6m"><a class="option" tabindex="-1">6 months</a></li>
-                          <li data-value="12m"><a class="option" tabindex="-1">12 months</a></li>
-                          <li data-value="24m"><a class="option" tabindex="-1">24 months</a></li>
-                          <li data-value="36m"><a class="option" tabindex="-1">36 months</a></li>
+                        <ul id="days-options" className="dropdown-options combobox-options zsg-menu-linklist">
+                          <li data-value="any" id=""><a href="#/" className="option" tabIndex="-1">Any</a></li>
+                          <li data-value="1" id=""><a href="#/" className="option" tabIndex="-1">1 day</a></li>
+                          <li data-value="7" id=""><a href="#/" className="option" tabIndex="-1">7 days</a></li>
+                          <li data-value="14" id="" className="selected"><a href="#/" className="option" tabIndex="-1">14 days</a></li>
+                          <li data-value="30"><a href="#/" className="option" tabIndex="-1">30 days</a></li>
+                          <li data-value="90"><a href="#/" className="option" tabIndex="-1">90 days</a></li>
+                          <li data-value="6m"><a href="#/" className="option" tabIndex="-1">6 months</a></li>
+                          <li data-value="12m"><a href="#/" className="option" tabIndex="-1">12 months</a></li>
+                          <li data-value="24m"><a href="#/" className="option" tabIndex="-1">24 months</a></li>
+                          <li data-value="36m"><a href="#/" className="option" tabIndex="-1">36 months</a></li>
                         </ul>
                       </div>
-                      <select id="days-on-select" class="hide">
+                      <select id="days-on-select" className="hide">
                         <option value="any">Any</option>
                         <option value="1">1 day</option>
                         <option value="7">7 days</option>
@@ -436,11 +479,11 @@ export default class SearchBar extends Component {
                         <option value="36m">36 months</option>
                       </select>
                     </div>
-                    <div id="attribute-entry" class="search-entry">
-                      <div class="title">Keywords</div>
+                    <div id="attribute-entry" className="search-entry">
+                      <div className="title">Keywords</div>
                       <textarea id="attribute-terms" placeholder="Garage, pool, waterfront, etc."></textarea>
                     </div>
-                    <a class="button_primary" rel="nofollow" id="filterSearchButton" onClick="return false;" title="Search"><span> Apply </span></a>
+                    <a href="#/" className="button_primary" rel="nofollow" id="filterSearchButton"  title="Search"><span> Apply </span></a>
                   </div>
                 </fieldset>
               </form>
@@ -451,18 +494,18 @@ export default class SearchBar extends Component {
           <li id='save-search-button'>
             <fieldset className='filter-menu save-search'>
               <legend data-za-label='Save search'>
-                <a data-za-href='!ignore' data-za-label-submit='Save Search Toolbox submit'
-                  href='/property' className='lightbox-show zsg-link_primary' data-za-label='Save search'>
+                <a href="#/" data-za-label-submit='Save Search Toolbox submit'
+                   className='lightbox-show zsg-link_primary' data-za-label='Save search'>
                   Save Search
                 </a>
               </legend>
             </fieldset>
           </li>
           <li id='fav-control-myhome' className='search-nav-button'>
-            <a data-za-category='Search'
+            <a href="#/" data-za-category='Search'
               data-za-action='Saved Homes Click' rel='nofollow'
               data-after-auth-action-type='Link'
-              id='register_opener' href='/property'
+              id='register_opener'
               title='Saved Homes'
               className='toolbar-button zsg-button_primary track-ga-event show-lightbox'
               data-za-label='SavedHomes Map'> Saved Homes
@@ -472,3 +515,10 @@ export default class SearchBar extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  properties: state.properties,
+})
+
+
+export default connect(mapStateToProps,{ loadProperties, filterProperties })(SearchBar);

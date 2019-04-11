@@ -5,6 +5,9 @@ var listingsData = [
     state: 'NY',
     rooms: 1,
     baths: 2,
+    forSale: true,
+    forRent: true,
+    recentlySold: false,
     price: 220000,
     floorSpace:2000,
     extras: [
@@ -20,6 +23,9 @@ var listingsData = [
       state: 'OR',
       rooms: 0,
       baths: 2,
+      forSale: false,
+      forRent: true,
+      recentlySold: false,
       price: 50000,
       floorSpace:700,
       extras: [
@@ -35,6 +41,9 @@ var listingsData = [
       state: 'IL',
       rooms: 3,
       baths: 2,
+      forSale: true,
+      forRent: true,
+      recentlySold: false,
       price: 220000,
       floorSpace:2500,
       extras: [
@@ -50,6 +59,9 @@ var listingsData = [
       state: 'NY',
       rooms: 3,
       baths: 2,
+      forSale: false,
+      forRent: true,
+      recentlySold: false,
       price: 300000,
       floorSpace:1400,
       extras: [
@@ -65,6 +77,9 @@ var listingsData = [
       state: 'Fl',
       rooms: 3,
       baths: 2,
+      forSale: true,
+      forRent: true,
+      recentlySold: false,
       price: 160000,
       floorSpace:2000,
       extras: [
@@ -80,6 +95,9 @@ var listingsData = [
       state: 'NY',
       rooms: 2,
       baths: 2,
+      forSale: true,
+      forRent: true,
+      recentlySold: false,
       price: 100000,
       floorSpace:2000,
       extras: [
@@ -95,6 +113,9 @@ var listingsData = [
       state: 'NJ',
       rooms: 1,
       baths: 2,
+      forSale: false,
+      forRent: true,
+      recentlySold: false,
       price: 100000,
       floorSpace:2000,
       extras: [

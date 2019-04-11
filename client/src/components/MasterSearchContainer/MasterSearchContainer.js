@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import Filter from './Filter.js'
+// import Filter from './Filter.js'
 import Listings from './Listings.js'
 import listingsData from '../../assets/data/listingsData.js'
-
+import { filterProperties } from '../../redux/actions'
+import { connect } from 'react-redux'
 class MasterSearchContainer extends Component {
   constructor (props) {
     super(props)
@@ -43,14 +44,18 @@ class MasterSearchContainer extends Component {
 
   // The change function
   change (event) {
+    
     let name = event.target.name
     let value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value
-
+ 
+  
     this.setState({
       [name]: value
 
     }, () => {
-      this.filteredData()
+        const filterCriteria = this.state
+
+      this.props.filterProperties(listingsData, filterCriteria)
     })
   }
 
@@ -151,7 +156,7 @@ class MasterSearchContainer extends Component {
         <div id='main-container' className='container'>
           <div className='row'>
 
-            <Filter change={this.change} globalState={this.state} populateAction={this.populateForms} />
+            {/* <Filter change={this.change} globalState={this.state} populateAction={this.populateForms} /> */}
             <Listings listingsData={this.state.filteredData} change={this.change} globalState={this.state} changeView={this.changeView} />
           </div>
         </div>
@@ -160,4 +165,8 @@ class MasterSearchContainer extends Component {
   }
 }
 
-export default MasterSearchContainer
+const mapStateToProps = (state) => ({
+  properties: state.properties,
+})
+
+export default connect(mapStateToProps, {filterProperties})(MasterSearchContainer)

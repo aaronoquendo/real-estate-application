@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-
-export default class Header extends Component {
+import { connect }  from 'react-redux'
+import { loadProperties, filterProperties } from "../../redux/actions";
+class Header extends Component {
   constructor () {
     super()
     this.state = {
@@ -8,19 +9,75 @@ export default class Header extends Component {
     }
     this.loopListings = this.loopListings.bind(this)
   }
-  loopListings () {
-    let { listingsData } = this.props
+  changeAscDesc (event, properties) {
+    const { value } = event.target
 
-    if (listingsData === undefined || listingsData.length === 0) { return 'Sorry your filter did not match any listing' }
+    this.props.filterProperties(properties, value)
+   
 
-    return listingsData.map((listing, index) => {
+  }
+    // Function which filters the data based on user input
+    filterData (event , properties) {
+   
+      const { value } = event.target
+  
+      let newData = properties;
+      // newData = this.state.listingsData.filter((item) => {
+      //   return item.price >= this.state.min_price && item.price <= this.state.max_price && item.floorSpace >= this.state.min_floor_space && item.floorSpace <= this.state.max_floor_space && item.rooms >= this.state.bedrooms
+      // })
+  
+      // if (this.state.city !== 'All') {
+      //   newData = newData.filter((item) => {
+      //     return item.city !== this.state.city
+      //   })
+      // }
+  
+      // if (this.state.houseType !== 'All') {
+      //   newData = newData.filter((item) => {
+      //     return item.houseType !== this.state.houseType
+      //   })
+      // }
+  
+      if (value === 'price-dsc') {
+        newData = newData.sort((a, b) => {
+          return a.price - b.price
+        })
+      }
+  
+      if (value === 'price-asc') {
+        newData = newData.sort((a, b) => {
+          return b.price - a.price
+        })
+      }
+  
+      // if (this.state.search !== '') {
+      //   newData = newData.filter((item) => {
+      //     let city = item.city.toLowerCase()
+      //     let searchText = this.state.search.toLowerCase()
+      //     let n = city.match(searchText)
+  
+      //     if (n !== null) {
+      //       return true
+      //     }
+      //     return false;
+      //   })
+      // }
+      this.props.loadProperties(newData)
+    }
+
+  loopListings (properties) {
+    if (properties === undefined || properties.length === 0) { return 'Sorry your filter did not match any listing' }
+
+    return properties.map((property, index) => {
+      
+      // This is the long box view
       if (this.props.globalState.view === 'box') {
-        // This is the long box view
+        
         return (
-          <div className='col-sm-4 col-md-4 col-lg-3' key={index}>
+          <div className='col-sm-12 col-md-6 col-lg-4 col-xl-3' key={index}>
             <div className='listing'>
-              <div className='listing-img' style={{ background: `url("${listing.image}") no-repeat center center` }}>
-                <span className='address'>{listing.address}</span>
+              <div className='listing-img' style={{ background: `url("${property.image}") no-repeat center center` }}>
+                <span className='address'>{property.address}</span>
                 <div className='details'>
                   <div className='container'>
                     <div className='row'>
@@ -35,10 +92,10 @@ export default class Header extends Component {
                       </div>
                     </div>
                     <div className='listing-details'>
-                      <div className='floor-space'><i className='fa fa-square-o' aria-hidden='true' /> <span>{listing.floorSpace} ft&sup2;</span></div>
+                      <div className='floor-space'><i className='fa fa-square-o' aria-hidden='true' /> <span>{property.floorSpace} ft&sup2;</span></div>
                       <div className='bedrooms'>
                         <i className='fa fa-bed' aria-hidden='true' />
-                        <span>{listing.rooms} bedrooms</span>
+                        <span>{property.rooms} bedrooms</span>
                       </div>
                       <div className='view-btn'>
                             View Listing
@@ -48,8 +105,8 @@ export default class Header extends Component {
                 </div>
               </div>
               <div className='bottom-info'>
-                <span className='price'>${listing.price}</span>
-                <span className='location'><i className='fa fa-map-marker' aria-hidden='true' /> {listing.city}, {listing.state}</span>
+                <span className='price'>${property.price}</span>
+                <span className='location'><i className='fa fa-map-marker' aria-hidden='true' /> {property.city}, {property.state}</span>
               </div>
             </div>
           </div>
@@ -59,8 +116,8 @@ export default class Header extends Component {
         return (
           <div className='col-md-12 col-lg-6' key={index}>
             <div className='listing'>
-              <div className='listing-img' style={{ background: `url("${listing.image}") no-repeat center center` }}>
-                <span className='address'>{listing.address}</span>
+              <div className='listing-img' style={{ background: `url("${property.image}") no-repeat center center` }}>
+                <span className='address'>{property.address}</span>
                 <div className='details'>
 
                   <div className='col-md-3'>
@@ -74,10 +131,10 @@ export default class Header extends Component {
                     </div>
 
                     <div className='listing-details'>
-                      <div className='floor-space'><i className='fa fa-square-o' aria-hidden='true' /> <span>{listing.floorSpace} ft&sup2;</span></div>
+                      <div className='floor-space'><i className='fa fa-square-o' aria-hidden='true' /> <span>{property.floorSpace} ft&sup2;</span></div>
                       <div className='bedrooms'>
                         <i className='fa fa-bed' aria-hidden='true' />
-                        <span>{listing.rooms} bedrooms</span>
+                        <span>{property.rooms} bedrooms</span>
                       </div>
 
                       <div className='view-btn'>
@@ -89,8 +146,8 @@ export default class Header extends Component {
                 </div>
               </div>
               <div className='bottom-info'>
-                <span className='price'>${listing.price}</span>
-                <span className='location'><i className='fa fa-map-marker' aria-hidden='true' /> {listing.city}, {listing.state}</span>
+                <span className='price'>${property.price}</span>
+                <span className='location'><i className='fa fa-map-marker' aria-hidden='true' /> {property.city}, {property.state}</span>
               </div>
             </div>
           </div>
@@ -98,17 +155,19 @@ export default class Header extends Component {
       }
     })
   }
+
   render () {
+    const properties = this.props.allProperties
     return (
-      <section id='listings' className='col-sm-12 col-md-8 col-lg-9'>
-        <section className='search-area'>
-          <input type='text' name='search' placeholder='Search here...'onChange={this.props.change} />
-        </section>
+      <section id='listings' className='col-sm-12 col-md-12 col-lg-12'>
+        {/* <section className='search-area'>
+          <input type='text' name='search' placeholder='Search here...' onChange={() => this.changeAscDesc} />
+        </section> */}
 
         <section className='sortby-area'>
           <div className='results'>{this.props.globalState.filteredData.length} result found</div>
           <div className='sort-options'>
-            <select name='sortby' className='sortby' onChange={this.props.change}>
+            <select name='sortby' className='sortby' onChange={(event) => this.changeAscDesc(event, properties)}>
               <option value='price-dsc'>Lowest Price</option>
               <option value='price-asc'>Highest Price</option>
             </select>
@@ -124,7 +183,7 @@ export default class Header extends Component {
         <section className='listings-results'>
           <div className='container'>
             <div className='row'>
-              {this.loopListings()}
+              {this.loopListings(properties)}
             </div>
           </div>
         </section>
@@ -142,8 +201,13 @@ export default class Header extends Component {
             </ul>
           </div>
         </section>
-
       </section>
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  allProperties: state.properties.allProperties,
+})
+
+export default connect(mapStateToProps, { loadProperties, filterProperties })(Header);

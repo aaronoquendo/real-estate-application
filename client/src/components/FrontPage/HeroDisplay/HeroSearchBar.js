@@ -9,11 +9,11 @@ export default class HeroSearchBar extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange (event) {
-    console.log('hello');
+
     this.setState({ query: event.target.value })
   }
   render () {
-    console.log('search query state', this.state.query)
+
     return (
       <React.Fragment>
         <form className='search-form' action='/property'>

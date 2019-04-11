@@ -9,6 +9,7 @@ import './assets/styles/css/bootstrap.min.css'
 import './assets/styles/css/fontawesome.min.css'
 import './assets/styles/css/hamburgers.min.css'
 import './assets/styles/sass/main.scss'
+
 class App extends Component {
   render () {
     return (
@@ -19,8 +20,6 @@ class App extends Component {
         <Route exact path={['/', '/buy', '/sell', '/rent', '/estimate']} component={props =>        <FrontPage {...props} />} />
 
         {/* Property Search Routes */}
-
-
         <Route exact path='/property' component={props => <SearchBar {...props} />} />
         <Route exact path='/property' component={props => <MasterSearchContainer {...props} />} />
       </div>
