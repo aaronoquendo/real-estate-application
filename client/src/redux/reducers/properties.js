@@ -29,8 +29,11 @@ export default function(state = INITIAL_STATE, action){
       // })
     
         if (filterSettings.isForSale === true) {
-          filteredProperties = filteredProperties.filter((item) => (item.isForSale === false))
-     
+          filteredProperties = filteredProperties.filter((item) => (item.isForSale === true))
+        }
+
+        if (filterSettings.isForSale === false) {
+          filteredProperties = filteredProperties.filter((item) => (item.isForSale === true))
         }
   
         if (filterSettings.houseType === 'All')
@@ -50,7 +53,8 @@ export default function(state = INITIAL_STATE, action){
           //We return the filtered list of properties
           return {
             ...state,
-            filteredProperties: [...filteredProperties]
+            allProperties: [...filteredProperties]
+          
           }
       
 

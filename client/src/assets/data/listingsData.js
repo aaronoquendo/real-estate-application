@@ -7,7 +7,7 @@ var listingsData = [
     baths: 2,
     isForSale: true,
     isForRent: true,
-    recentlySold: false,
+    wasSold: false,
     price: 220000,
     floorSpace:2000,
     extras: [
@@ -25,7 +25,7 @@ var listingsData = [
       baths: 2,
       isForSale: false,
       isForRent: true,
-      recentlySold: false,
+      wasSold: false,
       price: 50000,
       floorSpace:700,
       extras: [
@@ -43,7 +43,7 @@ var listingsData = [
       baths: 2,
       isForSale: true,
       isForRent: true,
-      recentlySold: false,
+      wasSold: false,
       price: 220000,
       floorSpace:2500,
       extras: [
@@ -61,7 +61,7 @@ var listingsData = [
       baths: 2,
       isForSale: false,
       isForRent: true,
-      recentlySold: false,
+      wasSold: false,
       price: 300000,
       floorSpace:1400,
       extras: [
@@ -79,7 +79,7 @@ var listingsData = [
       baths: 2,
       isForSale: true,
       isForRent: false,
-      recentlySold: false,
+      wasSold: false,
       price: 160000,
       floorSpace:2000,
       extras: [
@@ -97,7 +97,7 @@ var listingsData = [
       baths: 2,
       isForSale: true,
       isForRent: false,
-      recentlySold: false,
+      wasSold: false,
       price: 100000,
       floorSpace:2000,
       extras: [
@@ -115,7 +115,7 @@ var listingsData = [
       baths: 2,
       isForSale: false,
       isForRent: true,
-      recentlySold: false,
+      wasSold: false,
       price: 100000,
       floorSpace:2000,
       extras: [

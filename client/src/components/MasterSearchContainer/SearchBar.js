@@ -21,7 +21,7 @@ class SearchBar extends Component {
       finished_basement: false,
       gym: false,
       isForSale: true,
-      isForRent: false,
+      isForRent:  true,
       wasSold: false,
     }
   }
@@ -89,7 +89,7 @@ class SearchBar extends Component {
     this.props.filterProperties(listingsData, filterCriteria)
 
   }
-  
+
   render () {
     console.log("searchbar state",this.state);
     return (
