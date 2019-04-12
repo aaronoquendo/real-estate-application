@@ -8,6 +8,7 @@ var listingsData = [
     isForSale: true,
     isForRent: true,
     wasSold: false,
+    listingType: 'isForSale',
     price: 220000,
     floorSpace:2000,
     extras: [
@@ -26,6 +27,7 @@ var listingsData = [
       isForSale: false,
       isForRent: true,
       wasSold: false,
+      listingType: 'isForRent',
       price: 50000,
       floorSpace:700,
       extras: [
@@ -44,6 +46,7 @@ var listingsData = [
       isForSale: true,
       isForRent: true,
       wasSold: false,
+      listingType: 'isForRent',
       price: 220000,
       floorSpace:2500,
       extras: [
@@ -62,6 +65,7 @@ var listingsData = [
       isForSale: false,
       isForRent: true,
       wasSold: false,
+      listingType: 'isForSale',
       price: 300000,
       floorSpace:1400,
       extras: [
@@ -80,6 +84,7 @@ var listingsData = [
       isForSale: true,
       isForRent: false,
       wasSold: false,
+      listingType: 'wasSold',
       price: 160000,
       floorSpace:2000,
       extras: [
@@ -98,6 +103,7 @@ var listingsData = [
       isForSale: true,
       isForRent: false,
       wasSold: false,
+      listingType: 'wasSold',
       price: 100000,
       floorSpace:2000,
       extras: [
@@ -116,6 +122,7 @@ var listingsData = [
       isForSale: false,
       isForRent: true,
       wasSold: false,
+      listingType: 'isForSale',
       price: 100000,
       floorSpace:2000,
       extras: [

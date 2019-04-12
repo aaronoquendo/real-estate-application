@@ -20,9 +20,10 @@ class SearchBar extends Component {
       swimming_pool: false,
       finished_basement: false,
       gym: false,
-      isForSale: true,
-      isForRent:  true,
+      isForSale: false,
+      isForRent: false,
       wasSold: false,
+      listingType: ''
     }
   }
   componentWillMount () {
@@ -76,22 +77,31 @@ class SearchBar extends Component {
 
   }
 
-  handleInputChange(event) {
+  handleInputChange(event, allProperties, listingType) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+    console.log(name);
+    console.log(value);
+    console.log("listing type",listingType);
 
     this.setState({
-      [name]: value
+      [name]: value,
+      listingType
+    }, () => {
+      const filterCriteria = this.state
+      console.log("dd",allProperties);
+      this.props.filterProperties(allProperties, filterCriteria)
     });
 
-    const filterCriteria = this.state
-    this.props.filterProperties(listingsData, filterCriteria)
+
+    
 
   }
 
   render () {
     console.log("searchbar state",this.state);
+    const {allProperties} = this.props.properties
     return (
       <div id='search-bar-container' className=''>
         <ul className='toolbar-left'>
@@ -125,50 +135,75 @@ class SearchBar extends Component {
                   <div className='filter-pane listings-menu-pane'>
                     <div id='category-entries' className='search-entry'>
                       <ul className='home-icons'>
-                        <li id='fs-listings' className='listing-type'>
-                          <div className='listing-category'>
-                            <input id='fs-listings-input'  
-                            className='checkbox' 
-                            name='isForSale' 
-                            type='checkbox' 
-                            checked={this.state.isForSale} 
-                            onClick={(event) => this.handleInputChange(event)}/>
-                            <label htmlFor='fs-listings-input'>
-                              <span className='icon-for-sale'>&nbsp;</span><span className='listing-type-text'>For Sale </span>
-                              <span id='fs-listings-resultCountWrapper'>(44)</span>
-                            </label>
-                          </div>
-                        </li>
-                        <li id='fr-listings' className='listing-type'>
-                          <div className='listing-category'>
-                            <input id='fr-listings-input' type='checkbox' className='checkbox' name='isForRent' checked={this.state.isForRent} onClick={(event) => this.handleInputChange(event)}/>
-                            <label htmlFor='fr-listings-input'>
-                              <span className='icon-for-rent'>&nbsp;</span><span className='listing-type-text' >For Rent </span>
-                              <span id='fr-listings-resultCountWrapper'>(11)</span>
-                            </label>
-                          </div>
-                        </li>
-                        <li id='rs-listings' className='listing-type'>
-                          <div className='listing-category'>
-                            <input id='rs-listings-input' className='checkbox' name='wasSold' type='checkbox' checked={this.state.wasSold} onClick={(event) => this.handleInputChange(event)}/>
-                            <label htmlFor='rs-listings-input'>
-                              <span className='icon-recently-sold'>&nbsp;</span>
-                              <span className='listing-type-text'>Recently Sold </span>
-                              <span id='rs-listings-resultCountWrapper'>(288)</span>
-                            </label>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <div id='only-entries' className='search-entry'>
-                      <ul className='only-entries-ul'>
-                        <li className='only-entries-li' id='open-houses'>
-                          <input id='open-houses-input' className='checkbox' type='checkbox' />
-                          <label htmlFor='open-houses-input'>
-                            <span className='icon-recently-sold'>&nbsp;</span>
-                            <span className='open-houses'>Open Houses only</span>
-                          </label>
-                        </li>
+
+
+                        <form>
+                          <li id='fs-listings' className='listing-type'>
+                            <div className='listing-category'>
+                              <input 
+                              id='fs-listings-input'  
+                              className='checkbox' 
+                              name='listingType' 
+                              type='radio' 
+                              
+                              onClick={(event) => this.handleInputChange(event, allProperties, 'isForSale')}/>
+                              <label htmlFor='fs-listings-input'>
+                                <span className='icon-for-sale'>&nbsp;</span><span className='listing-type-text'>For Sale </span>
+                                <span id='fs-listings-resultCountWrapper'>(44)</span>
+                              </label>
+                            </div>
+                          </li>
+                          <li id='fr-listings' className='listing-type'>
+                            <div className='listing-category'>
+                              <input 
+                              id='fr-listings-input' 
+                              type='radio' 
+                              className='checkbox' 
+                              name='listingType' 
+                              
+                              onClick={(event) => this.handleInputChange(event, allProperties, 'isForRent')}
+                              />
+                              <label htmlFor='fr-listings-input'>
+                                <span className='icon-for-rent'>&nbsp;</span><span className='listing-type-text' >For Rent </span>
+                                <span id='fr-listings-resultCountWrapper'>(11)</span>
+                              </label>
+                            </div>
+                          </li>
+                          <li id='rs-listings' className='listing-type'>
+                            <div className='listing-category'>
+                              <input 
+                              id='rs-listings-input' 
+                              className='checkbox' 
+                              name='listingType' 
+                              type='radio' 
+                              
+                              onClick={(event) => this.handleInputChange(event, allProperties, 'wasSold')}
+                              />
+                              <label htmlFor='rs-listings-input'>
+                                <span className='icon-recently-sold'>&nbsp;</span>
+                                <span className='listing-type-text'>Recently Sold </span>
+                                <span id='rs-listings-resultCountWrapper'>(288)</span>
+                              </label>
+                            </div>
+                          </li>
+                          <li id='rs-listings' className='listing-type'>
+                            <div className='listing-category'>
+                              <input 
+                              id='rs-listings-input' 
+                              className='checkbox' 
+                              name='listingType' 
+                              type='radio' 
+                              
+                              onClick={(event) => this.handleInputChange(event, allProperties, 'all')}
+                              />
+                              <label htmlFor='rs-listings-input'>
+                                <span className='icon-recently-sold'>&nbsp;</span>
+                                <span className='listing-type-text'>All Listings</span>
+                                <span id='rs-listings-resultCountWrapper'>(288)</span>
+                              </label>
+                            </div>
+                          </li>
+                        </form>
                       </ul>
                     </div>
                   </div>
