@@ -11,14 +11,16 @@ class Header extends Component {
   }
   changeAscDesc (event, properties) {
     const { value } = event.target
+    console.log("ascdec value when clicked",value)
+    console.log(properties.allProperties);
 
-    this.props.filterProperties(properties, value)
+    this.props.filterProperties(properties.allProperties, value)
   }
 
   loopListings (properties) {
     
     console.log("looplistings",properties)
-    console.log("looplistings2",properties.filteredProperties)
+
     if(typeof properties.filteredProperties !== 'undefined' && properties.filteredProperties.length > 0){
 
       return properties.filteredProperties.map((property, index) => {
@@ -205,8 +207,7 @@ class Header extends Component {
   }
 
   render () {
-    const { properties } = this.props
-    
+    const properties  = this.props.properties
     return (
       <section id='listings' className='col-sm-12 col-md-12 col-lg-12'>
         {/* <section className='search-area'>

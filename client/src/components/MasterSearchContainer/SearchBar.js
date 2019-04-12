@@ -23,7 +23,8 @@ class SearchBar extends Component {
       isForSale: false,
       isForRent: false,
       wasSold: false,
-      listingType: ''
+      listingType: '',
+      
     }
   }
   componentWillMount () {

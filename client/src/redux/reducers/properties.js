@@ -20,6 +20,7 @@ export default function(state = INITIAL_STATE, action){
       const { filterSettings } = action.payload
       let filteredProperties = action.payload.properties
 
+      console.log("filterSettings", filterSettings)
       //Below is all of the tests to filter the data to the user's liking
       // filteredProperties = properties.filter((item) => {
       //   return (item.price >= filterValue) && (item.price <= this.state.max_price) && (item.floorSpace >= this.state.min_floor_space) && (item.floorSpace <= this.state.max_floor_space) && (item.rooms >= this.state.bedrooms)
@@ -41,13 +42,18 @@ export default function(state = INITIAL_STATE, action){
         
         // if (filterSettings.houseType !== 'All') 
         //   filteredProperties = filteredProperties.filter((item) => (item.houseType === filterSettings.houseType))
-        
-        // if (filterSettings === 'price-dsc')
-        //   filteredProperties = filteredProperties.sort((a, b) => (a.price - b.price))
+        console.log(filterSettings)
+       
+        if (filterSettings === 'price-dsc')
+          filteredProperties = filteredProperties.sort((a, b) => (a.price - b.price))
+
+        if (filterSettings === 'price-asc') 
+          filteredProperties = filteredProperties.sort((a, b) => (b.price - a.price))
+
+
+
         
     
-        // if (filterSettings === 'price-asc') 
-        //   filteredProperties = filteredProperties.sort((a, b) => (b.price - a.price))
 
       console.log("properties after",filteredProperties)
       //We return the filtered list of properties
