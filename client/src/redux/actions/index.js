@@ -16,7 +16,6 @@ export const loadProperties = (properties) => {
 
 //Sorting properties based on the users input
 export const filterProperties = (properties, filterSettings) => {
-  console.log("testy",properties)
   return{
     type: FILTER_PROPERTIES,
     payload: {
