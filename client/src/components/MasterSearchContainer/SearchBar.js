@@ -11,7 +11,7 @@ class SearchBar extends Component {
       city: 'All',
       listingType: 'All',
       houseType: 'All',
-      bedrooms: '1',
+      bedrooms: 0,
       min_price: 0,
       max_price: 10000000,
       min_floor_space: 0,
@@ -23,7 +23,7 @@ class SearchBar extends Component {
       isForSale: false,
       isForRent: false,
       wasSold: false,
-      listingType: '',
+      listingType: 'all',
       
     }
   }
@@ -78,14 +78,18 @@ class SearchBar extends Component {
 
   }
 
-  handleInputChange(event, allProperties, listingType) {
+  handleInputChange(event, allProperties, listingType, numOfBeds) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+    console.log("test",event.target);
+   
     console.log(name);
     console.log(value);
     console.log("listing type",listingType);
-
+    console.log("changing price");
+    if (numOfBeds >= 0)
+      this.setState({bedrooms: numOfBeds})
     this.setState({
       [name]: value,
       listingType
@@ -100,8 +104,20 @@ class SearchBar extends Component {
 
   }
 
+  priceChange(event, allProperties, listingType) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    
+    });
+
+  }
+
+
   render () {
-    console.log("searchbar state",this.state);
     const {allProperties} = this.props.properties
     return (
       <div id='search-bar-container' className=''>
@@ -224,13 +240,24 @@ class SearchBar extends Component {
                     <div id='price-entries' className='price-entries search-entry'>
                       <div className='dualboxes' id=''>
                         <div className='box1' id=''>
-                          <input className='text' maxLength='11' size='10' name='price-min' id='price-min' type='text'
-                            autoComplete='off' placeholder='Min' />
+                          <input className='text' maxLength='11' size='10' id='price-min' type='text'
+                            autoComplete='off' placeholder='Min' 
+                            name='min_price' 
+                            onChange={(event) => this.priceChange(event)}
+                            onBlur={(event) => this.handleInputChange(event,allProperties, null)} 
+                            value={this.state.min_price}
+                            
+                            />
                         </div>
                         <div className='dash'>&nbsp;</div>
                         <div className='box2'>
-                          <input className='text commaFormat' maxLength='11' size='11' name='price-max' id='price-max'
-                            type='text' autoComplete='off' placeholder='Max' />
+                          <input className='text commaFormat' maxLength='11' size='11' id='price-max'
+                            type='text' autoComplete='off' placeholder='Max' 
+                            name='max_price' 
+                            onChange={(event) => this.priceChange(event)}
+                            onBlur={(event) => this.handleInputChange(event,allProperties, null)} 
+                            value={this.state.max_price}
+                            />
                         </div>
                       </div>
                     </div>
@@ -285,13 +312,13 @@ class SearchBar extends Component {
                   <div className='filter-pane beds-pane' >
                     <div id='beds-entries' className='search-entry'>
                       <ul id='bed-options' className='bed-options dropdown-options menu-linklist'>
-                        <li data-value='0,' id='' className=''><a href="#/"  className='option' tabIndex='0'>0+</a></li>
-                        <li data-value='1,' id='' className=''><a href="#/"  className='option' tabIndex='0'>1+</a></li>
-                        <li data-value='2,' id='' className=''><a href="#/"  className='option' tabIndex='0'>2+</a></li>
-                        <li data-value='3,' id='' className=''><a href="#/"  className='option' tabIndex='0'>3+</a></li>
-                        <li data-value='4,' id='' className=''><a href="#/"  className='option' tabIndex='0'>4+</a></li>
-                        <li data-value='5,' id='' className=''><a href="#/"  className='option' tabIndex='0'>5+</a></li>
-                        <li data-value='6,' id='' className=''><a href="#/"  className='option' tabIndex='0'>6+</a></li>
+                        <li onClick={ (event) => this.handleInputChange(event,allProperties, null, 0) } data-value='0,' id='' className='' ><a href="#/"  className='option' tabIndex='0'>0+</a></li>
+                        <li data-value='1,' id='' className='' onClick={ (event) => this.handleInputChange(event,allProperties, null, 1) } ><a href="#/"  className='option' tabIndex='0'>1+</a></li>
+                        <li data-value='2,' id='' className='' onClick={ (event) => this.handleInputChange(event,allProperties, null, 2) }><a href="#/"  className='option' tabIndex='0'>2+</a></li>
+                        <li data-value='3,' id='' className='' onClick={ (event) => this.handleInputChange(event,allProperties, null, 3) }><a href="#/"  className='option' tabIndex='0'>3+</a></li>
+                        <li data-value='4,' id='' className='' onClick={ (event) => this.handleInputChange(event,allProperties, null, 4) }><a href="#/"  className='option' tabIndex='0'>4+</a></li>
+                        <li data-value='5,' id='' className='' onClick={ (event) => this.handleInputChange(event,allProperties, null, 5) }><a href="#/"  className='option' tabIndex='0'>5+</a></li>
+                        <li data-value='6,' id='' className='' onClick={ (event) => this.handleInputChange(event,allProperties, null, 6) }><a href="#/"  className='option' tabIndex='0'>6+</a></li>
                       </ul>
                       <select id='beds-select' className='hide'>
                         <option value='0,'>0+</option>

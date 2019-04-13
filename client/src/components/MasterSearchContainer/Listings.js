@@ -11,7 +11,7 @@ class Header extends Component {
   }
   changeAscDesc (event, properties) {
     const { value } = event.target
-    console.log("ascdec value when clicked",value)
+    console.log("ascdec value when clicked", value)
     console.log(properties.allProperties);
 
     this.props.filterProperties(properties.allProperties, value)

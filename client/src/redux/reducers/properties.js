@@ -19,13 +19,16 @@ export default function(state = INITIAL_STATE, action){
     case FILTER_PROPERTIES: {
       const { filterSettings } = action.payload
       let filteredProperties = action.payload.properties
-
+      console.log("filteredProperties", filteredProperties)
       console.log("filterSettings", filterSettings)
       //Below is all of the tests to filter the data to the user's liking
-      // filteredProperties = properties.filter((item) => {
-      //   return (item.price >= filterValue) && (item.price <= this.state.max_price) && (item.floorSpace >= this.state.min_floor_space) && (item.floorSpace <= this.state.max_floor_space) && (item.rooms >= this.state.bedrooms)
-      // })
-  
+      filteredProperties = filteredProperties.filter((item) => {
+        return (item.price >= filterSettings.min_price) && (item.price <= filterSettings.max_price)
+      })
+
+    
+      filteredProperties = filteredProperties.filter((item) => (item.rooms >= filterSettings.bedrooms))
+
       if (filterSettings.listingType === 'isForSale')
         filteredProperties = filteredProperties.filter((item) => (item.listingType === 'isForSale'))
       
@@ -36,7 +39,8 @@ export default function(state = INITIAL_STATE, action){
         filteredProperties = filteredProperties.filter((item) => (item.listingType === 'wasSold'))
 
       if (filterSettings.listingType === 'all') 
-  
+
+
         // if (filterSettings.houseType === 'All')
         //   filteredProperties = filteredProperties.filter((item) => (filteredProperties.houseType !== ''))
         
@@ -49,11 +53,6 @@ export default function(state = INITIAL_STATE, action){
 
         if (filterSettings === 'price-asc') 
           filteredProperties = filteredProperties.sort((a, b) => (b.price - a.price))
-
-
-
-        
-    
 
       console.log("properties after",filteredProperties)
       //We return the filtered list of properties

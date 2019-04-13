@@ -131,6 +131,101 @@ var listingsData = [
       ],
       houseType:'Studio',
       image:'http://photos.mredllc.com/photos/property/434/09300434.jpg'
+    },
+    {
+      address:'76 mohawk ave',
+      city: 'Dreamtown',
+      state: 'NJ',
+      rooms: 4,
+      baths: 2,
+      isForSale: false,
+      isForRent: true,
+      wasSold: false,
+      listingType: 'isForSale',
+      price: 100000,
+      floorSpace:2000,
+      extras: [
+        'elevator',
+        'pool'
+      ],
+      houseType:'Studio',
+      image:'https://photos.zillowstatic.com/cc_ft_1536/IS62txkeuo0gce1000000000.webp'
+    },
+    {
+      address:'50 Decker ave',
+      city: 'Dreamtown',
+      state: 'NJ',
+      rooms: 5,
+      baths: 2,
+      isForSale: false,
+      isForRent: true,
+      wasSold: false,
+      listingType: 'isForSale',
+      price: 100000,
+      floorSpace:2000,
+      extras: [
+        'elevator',
+        'pool'
+      ],
+      houseType:'Studio',
+      image:'https://photos.zillowstatic.com/cc_ft_1536/ISma2jnx1pqodr0000000000.webp'
+    },
+    {
+      address:'20 Jack ave',
+      city: 'Dreamtown',
+      state: 'KS',
+      rooms: 6,
+      baths: 2,
+      isForSale: false,
+      isForRent: true,
+      wasSold: false,
+      listingType: 'isForSale',
+      price: 100000,
+      floorSpace:2000,
+      extras: [
+        'elevator',
+        'pool'
+      ],
+      houseType:'Studio',
+      image:'https://photos.zillowstatic.com/cc_ft_1536/ISyva18icd4m0x1000000000.webp'
+    },
+    {
+      address:'29 Richmond ave',
+      city: 'Dreamtown',
+      state: 'CA',
+      rooms: 8,
+      baths: 4,
+      isForSale: false,
+      isForRent: true,
+      wasSold: false,
+      listingType: 'isForSale',
+      price: 4000000,
+      floorSpace:2000,
+      extras: [
+        'elevator',
+        'pool'
+      ],
+      houseType:'Studio',
+      image:'https://photos.zillowstatic.com/cc_ft_1536/IS276kp2mxehwu0000000000.webp'
+    },
+    {
+      address:'20 Willowbrook Road',
+      city: 'Middletown',
+      state: 'MA',
+      rooms: 6,
+      baths: 2,
+      isForSale: false,
+      isForRent: true,
+      wasSold: false,
+      listingType: 'isForSale',
+      price: 429000,
+      floorSpace:2000,
+      extras: [
+        'elevator',
+        'pool'
+      ],
+      houseType:'Studio',
+      image:'https://photos.zillowstatic.com/p_h/ISyvql2w42k9a81000000000.jpg'
     }
 ]
 
