@@ -5,7 +5,6 @@ import {
 
 //Loading properties into the global state
 export const loadProperties = (properties) => {
-  console.log("load props",properties);
   return{
     type: LOAD_PROPERTIES,
     payload: {

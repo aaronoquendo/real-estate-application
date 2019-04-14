@@ -140,10 +140,11 @@
 
                     .listing-category {
                       user-select: none;
-
+                   
                       .checkbox {
                         cursor: pointer;
                         user-select: none;
+                        
                       }
 
                       label {
@@ -347,6 +348,7 @@
                 input {
                   top: -2px;
                   position: relative;
+                  cursor: pointer;
                 }
 
                 label {

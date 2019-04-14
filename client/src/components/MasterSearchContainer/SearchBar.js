@@ -24,7 +24,11 @@ class SearchBar extends Component {
       isForRent: false,
       wasSold: false,
       listingType: 'all',
-      
+      homeType: '',
+      isHouse: false,
+      isApartment: false,
+      isTownHouse: false,
+      isLot: false,
     }
   }
   componentWillMount () {
@@ -78,24 +82,27 @@ class SearchBar extends Component {
 
   }
 
-  handleInputChange(event, allProperties, listingType, numOfBeds) {
+  handleInputChange(event, allProperties, listingType, numOfBeds, homeType) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    console.log("test",event.target);
    
-    console.log(name);
-    console.log(value);
+    console.log("event name: ",name);
+    console.log("event value: ",value);
     console.log("listing type",listingType);
-    console.log("changing price");
+
     if (numOfBeds >= 0)
       this.setState({bedrooms: numOfBeds})
+
+      if (this.state.homeType )
+      this.setState({bedrooms: numOfBeds})
+
     this.setState({
       [name]: value,
-      listingType
+      listingType,
+      homeType
     }, () => {
       const filterCriteria = this.state
-      console.log("dd",allProperties);
       this.props.filterProperties(allProperties, filterCriteria)
     });
 
@@ -346,47 +353,48 @@ class SearchBar extends Component {
                   <div className='filter-pane housetype-pane' id=''>
                     <ul className='combobox-options multicheck-dropdown-options hometype-options' id=''>
                       <li id='hometype-houses-filters' className='hometype-houses selected'>
-                        <input name='hometype-houses-input' tabIndex='-1' id='hometype-houses-filters-input'
-                          type='checkbox' className='hometype-houses-input checkbox' data-za-label='SFH' />
+                        <input name='houseType' tabIndex='-1' id='hometype-houses-filters-input'
+                          type='radio' className='hometype-houses-input checkbox' data-za-label='SFH' 
+                          onClick={ (event) => this.handleInputChange(event,allProperties, null, null, 'house') } 
+                          />
                         <label htmlFor='hometype-houses-filters-input'>
                           <span id='hometype-houses-filters-label'
                             className='hometype-houses-label option'>Houses</span>
                         </label>
                       </li>
                       <li id='hometype-apart-filters' className='hometype-apart selected'>
-                        <input name='hometype-apart-input' tabIndex='-1' id='hometype-apart-filters-input'
-                          type='checkbox' className='hometype-apart-input checkbox' data-za-label='MFH' />
+                        <input name='houseType' tabIndex='-1' id='hometype-apart-filters-input'
+                          type='radio' className='hometype-apart-input checkbox' data-za-label='MFH' 
+                          onClick={ (event) => this.handleInputChange(event,allProperties, null, null, 'apartment') }
+                          />
                         <label htmlFor='hometype-apart-filters-input'><span id='hometype-apart-filters-label'
                           className='hometype-apart-label option'>Apartments</span>
                         </label>
                       </li>
                       <li id='hometype-condo-filters' className='hometype-condo selected'>
-                        <input name='hometype-condo-input' tabIndex='-1' id='hometype-condo-filters-input'
-                          type='checkbox' className='hometype-condo-input checkbox' data-za-label='Condo' />
+                        <input name='houseType' tabIndex='-1' id='hometype-condo-filters-input'
+                          type='radio' className='hometype-condo-input checkbox' data-za-label='Condo' 
+                          onClick={ (event) => this.handleInputChange(event,allProperties, null, null, 'condo') }
+                          />
                         <label htmlFor='hometype-condo-filters-input'>
                           <span id='hometype-condo-filters-label'
                             className='hometype-condo-label option'>Condos/co-ops</span>
                         </label>
                       </li>
                       <li id='hometype-townhome-filters' className='hometype-townhome selected'>
-                        <input name='hometype-townhome-input' tabIndex='-1' id='hometype-townhome-filters-input'
-                          type='checkbox' className='hometype-townhome-input checkbox' data-za-label='Townhomes' />
+                        <input name='houseType' tabIndex='-1' id='hometype-townhome-filters-input'
+                          type='radio' className='hometype-townhome-input checkbox' data-za-label='Townhomes' 
+                          onClick={ (event) => this.handleInputChange(event,allProperties, null, null, 'townhome') }
+                          />
                         <label htmlFor='hometype-townhome-filters-input'>
                           <span id='hometype-townhome-filters-label'
                             className='hometype-townhome-label option'>Townhomes</span>
                         </label>
                       </li>
-                      <li id='hometype-manufactured-filters' className='hometype-manufactured selected'>
-                        <input name='hometype-manufactured-input' tabIndex='-1'
-                          id='hometype-manufactured-top-filters-input' type='checkbox'
-                          className='hometype-manufactured-input checkbox' data-za-label='Manu' />
-                        <label htmlFor='hometype-manufactured-filters-input'>
-                          <span id='hometype-manufactured-filters-label'
-                            className='hometype-manufactured-label option'>Manufactured</span>
-                        </label>
-                      </li>
                       <li id='hometype-land-filters' className='hometype-land selected'>
-                        <input name='hometype-land-input' tabIndex='-1' id='hometype-land-filters-input' type='checkbox' className='hometype-land-input checkbox' data-za-label='Lot' />
+                        <input name='houseType' tabIndex='-1' id='hometype-land-filters-input' type='radio' className='hometype-land-input checkbox' data-za-label='Lot' 
+                        onClick={ (event) => this.handleInputChange(event,allProperties, null, null, 'lot') }
+                        />
                         <label htmlFor='hometype-land-filters-input'>
                           <span id='hometype-land-filters-label'
                             className='hometype-land-label option'>Lots/Land</span>

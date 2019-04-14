@@ -15,7 +15,7 @@ var listingsData = [
       'elevator',
       'gym'
     ],
-    houseType:'Apartment',
+    homeType:'apartment',
     image:'http://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_80/4147-23/the-hesby-apartments-exterior.jpg'
   },
   {
@@ -34,7 +34,7 @@ var listingsData = [
         'elevator',
         'pool'
       ],
-      houseType:'Studio',
+      homeType:'townhouse',
       image:'http://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_80/4022-48/sakura-crossing-apartments-exterior.jpg'
     },
     {
@@ -53,7 +53,7 @@ var listingsData = [
         'pool',
         'gym'
       ],
-      houseType:'Condo',
+      homeType:'house',
       image:'http://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_80/3639-12/mosaic-at-metro-apartments-swimming-pool.jpg'
     },
     {
@@ -72,7 +72,7 @@ var listingsData = [
         'elevator',
         'gym'
       ],
-      houseType:'Condo',
+      homeType:'apartment',
       image:'https://az616578.vo.msecnd.net/files/2016/07/26/636050962570138758-2091420308_Elegant-apartment-finder.jpg'
     },
     {
@@ -91,7 +91,7 @@ var listingsData = [
         'elevator',
         'gym'
       ],
-      houseType:'Ranch',
+      homeType:'townhome',
       image:'https://cdn.vox-cdn.com/thumbor/vAZEMsqZIJsmKcT8paqeFY1xI80=/0x0:1200x800/1200x800/filters:focal(504x304:696x496)/cdn.vox-cdn.com/uploads/chorus_image/image/56604061/090817wBroadway.0.jpg'
     },
     {
@@ -110,7 +110,7 @@ var listingsData = [
         'elevator',
         'pool'
       ],
-      houseType:'Condo',
+      homeType:'condo',
       image:'https://cdn.vox-cdn.com/thumbor/NeX2IvnaTUvJ8UtQ_yLI-jo3gOE=/0x0:2600x1733/1200x800/filters:focal(1092x659:1508x1075)/cdn.vox-cdn.com/uploads/chorus_image/image/60722051/1300PikeSt_Cam3People_111816.0.png'
     },
     {
@@ -129,7 +129,7 @@ var listingsData = [
         'elevator',
         'pool'
       ],
-      houseType:'Studio',
+      homeType:'townhome',
       image:'http://photos.mredllc.com/photos/property/434/09300434.jpg'
     },
     {
@@ -148,7 +148,7 @@ var listingsData = [
         'elevator',
         'pool'
       ],
-      houseType:'Studio',
+      homeType:'house',
       image:'https://photos.zillowstatic.com/cc_ft_1536/IS62txkeuo0gce1000000000.webp'
     },
     {
@@ -167,7 +167,7 @@ var listingsData = [
         'elevator',
         'pool'
       ],
-      houseType:'Studio',
+      homeType:'lot',
       image:'https://photos.zillowstatic.com/cc_ft_1536/ISma2jnx1pqodr0000000000.webp'
     },
     {
@@ -186,7 +186,7 @@ var listingsData = [
         'elevator',
         'pool'
       ],
-      houseType:'Studio',
+      homeType:'house',
       image:'https://photos.zillowstatic.com/cc_ft_1536/ISyva18icd4m0x1000000000.webp'
     },
     {
@@ -205,7 +205,7 @@ var listingsData = [
         'elevator',
         'pool'
       ],
-      houseType:'Studio',
+      homeType:'apartment',
       image:'https://photos.zillowstatic.com/cc_ft_1536/IS276kp2mxehwu0000000000.webp'
     },
     {
@@ -224,7 +224,7 @@ var listingsData = [
         'elevator',
         'pool'
       ],
-      houseType:'Studio',
+      homeType:'house',
       image:'https://photos.zillowstatic.com/p_h/ISyvql2w42k9a81000000000.jpg'
     }
 ]
