@@ -18,16 +18,10 @@ class Header extends Component {
   }
 
   loopListings (properties) {
-    
-    console.log("looplistings",properties)
-
     if(typeof properties.filteredProperties !== 'undefined' && properties.filteredProperties.length > 0){
-
       return properties.filteredProperties.map((property, index) => {
-      
         // This is the long box view
         if (this.props.globalState.view === 'box') {
-          
           return (
             <div className='col-sm-12 col-md-6 col-lg-4 col-xl-3' key={index}>
               <div className='listing'>
@@ -52,11 +46,12 @@ class Header extends Component {
                           <i className='fa fa-bed' aria-hidden='true' />
                           <span>{property.rooms} bedrooms</span>
                         </div>
-                        <div className='view-btn'>
+                      </div>
+
+                    </div>
+                    <div className='view-btn'>
                               View Listing
                         </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
                 <div className='bottom-info'>
@@ -91,12 +86,12 @@ class Header extends Component {
                             <i className='fa fa-bed' aria-hidden='true' />
                             <span>{property.rooms} bedrooms</span>
                           </div>
-    
-                          <div className='view-btn'>
+                        </div>
+
+                      </div>
+                      <div className='view-btn'>
                               View Listing
                           </div>
-                        </div>
-                      </div>
     
                     </div>
                   </div>
@@ -134,18 +129,19 @@ class Header extends Component {
                             <span className='user-name'>Jeffery Johnson </span>
                             <span className='post-date'>05/05/2017</span>
                           </div>
+                          <div className='listing-details'>
+                            <div className='floor-space'><i className='fa fa-square-o' aria-hidden='true' /> <span>{property.floorSpace} ft&sup2;</span></div>
+                            <div className='bedrooms'>
+                              <i className='fa fa-bed' aria-hidden='true' />
+                              <span>{property.rooms} bedrooms</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div className='listing-details'>
-                        <div className='floor-space'><i className='fa fa-square-o' aria-hidden='true' /> <span>{property.floorSpace} ft&sup2;</span></div>
-                        <div className='bedrooms'>
-                          <i className='fa fa-bed' aria-hidden='true' />
-                          <span>{property.rooms} bedrooms</span>
-                        </div>
-                        <div className='view-btn'>
+
+                      <div className='view-btn'>
                               View Listing
                         </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -181,10 +177,9 @@ class Header extends Component {
                           <i className='fa fa-bed' aria-hidden='true' />
                           <span>{property.rooms} bedrooms</span>
                         </div>
-  
-                        <div className='view-btn'>
+                      </div>
+                      <div className='view-btn'>
                             View Listing
-                        </div>
                       </div>
                     </div>
   

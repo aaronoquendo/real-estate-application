@@ -31,6 +31,7 @@ class SearchBar extends Component {
       isLot: false,
     }
   }
+
   componentWillMount () {
     this.props.loadProperties(listingsData)
     this.setState({properties: this.props.properties})
@@ -159,8 +160,6 @@ class SearchBar extends Component {
                   <div className='filter-pane listings-menu-pane'>
                     <div id='category-entries' className='search-entry'>
                       <ul className='home-icons'>
-
-
                         <form>
                           <li id='fs-listings' className='listing-type'>
                             <div className='listing-category'>
@@ -518,9 +517,9 @@ class SearchBar extends Component {
                       </div>
                     </div>
                     <div id="days-entries" className="search-entry">
-                      <div id="days-on-title" className="title">Days on Zillow</div>
+                      <div id="days-on-title" className="title">Days on Trillo</div>
                       <div id="days-dropdown" className="combobox custom-dropdown" data-dropdown-id="days-on-select" tabIndex="0">
-                        <span id="days-readout" className="options-display" data-za-action="Days on Zillow">14 days</span>
+                        <span id="days-readout" className="options-display" data-za-action="Days on Trillo">14 days</span>
                         <div className="dropdown-handle">
                           <span className="icon-arrow-menu-down"></span>
                         </div>
