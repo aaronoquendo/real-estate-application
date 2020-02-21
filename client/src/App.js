@@ -17,7 +17,7 @@ class App extends Component {
         {/* LandingPage Routes */}
         <Route path='/' component={props => <Header {...props} />} />
         <Route path='/' component={props => <MobileMenu {...props} />} />
-        <Route exact path={['/', '/buy', '/sell', '/rent', '/estimate']} component={props =>        <FrontPage {...props} />} />
+        <Route exact path={['/', '/buy', '/sell', '/rent', '/estimate']} component={props => <FrontPage {...props} />} />
 
         {/* Property Search Routes */}
         <Route exact path='/property' component={props => <SearchBar {...props} />} />
