@@ -73,7 +73,7 @@ var listingsData = [
         'gym'
       ],
       homeType:'apartment',
-      image:'https://az616578.vo.msecnd.net/files/2016/07/26/636050962570138758-2091420308_Elegant-apartment-finder.jpg'
+      image:'https://thenypost.files.wordpress.com/2019/07/re-44-handsome-avenue.jpg?quality=80&strip=all&w=978&h=652'
     },
     {
       address:'20 Grand view ave',
