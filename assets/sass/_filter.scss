@@ -1,0 +1,60 @@
+#filter {
+  background: $grey;
+  display: block;
+  height: 100vh;
+
+  .inside {
+    background: $grey;
+    padding: 20px;
+  }
+
+  h4 {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    font-weight: 700px;
+    text-transform: uppercase;
+  }
+
+  select {
+    background: transparent;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1b1b1b;
+    display: block;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  .filters {
+    .title {
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 1rem;
+      color: $darkgrey;
+    }
+
+    input[type="text"] {
+      border-radius: 5px;
+      font-size: 1rem;
+      padding: 0.4rem;
+      width: 45%;
+      display: inline-block;
+      margin-right: 2.5%;
+      margin-bottom: 1rem;
+    }
+
+    &.extras {
+      label {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+
+        input[type="checkbox"] {
+          float: right;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,226 @@
+.hero-wrapper {
+  width: 100%;
+
+  height: 550px;
+  position: relative;
+
+  .video-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+
+    video {
+      width: 100%;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin: auto;
+
+    }
+    :after{
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(65, 65, 65, 0.35);
+      z-index: 99;
+    }
+  }
+
+  .search-container {
+    top: 165px;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    width: 95%;
+    max-width: 610px;
+
+    .home-page-header {
+      .heading {
+        font-size: 50px;
+        color: $white;
+        font-weight: 400;
+        text-shadow: 0 0 4px #666;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+    }
+
+    .home-page-tabs {
+      text-align: center;
+
+      ul {
+        margin: 0 0 18px;
+        padding: 0;
+        display: inline-block;
+        border: 1px solid #fff;
+        width: 100%;
+
+        li {
+          line-height: 50px;
+          height: 50px;
+          font-size: 18px;
+          position: relative;
+          width: 25%;
+          display: inline-block;
+          border-right: 1px solid #fff;
+          background-color: rgba(0, 0, 0, 0.5);
+
+          a {
+            display: block;
+            color: $white;
+            text-decoration: none;
+            cursor: pointer;
+          }
+        }
+        li.active {
+          background-color: rgba(0, 116, 228, 0.75);
+
+        }
+        li.active:after {
+          content: '';
+          border-radius: 0;
+          bottom: -19px;
+          background: 0 0;
+          border-color: transparent transparent #fff;
+          border-style: solid;
+          border-width: 0 10px 10px;
+          display: inline-block;
+          margin-bottom: -1px;
+          margin-left: -5px;
+          top: auto;
+          position: absolute;
+          left: 48%;
+
+
+        }
+
+
+      }
+    }
+
+    .search-form {
+      position: relative;
+      width: 100%;
+      max-width: 610px;
+      min-width: 180px;
+      display: inline-block;
+
+      .input-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 610px;
+        min-width: 180px;
+        display: inline-block;
+
+        .search-input {
+          padding: 17px 120px 19px 20px;
+          font-size: 18px;
+          width: 100%;
+          height: 60px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: none;
+          color: #444;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    .searchBtnContainer {
+      position: absolute;
+      top: 0;
+      right: 1px;
+      bottom: 0;
+      word-spacing: -0.26em;
+
+      .search-button {
+        margin-top: 8px;
+        margin-right: 8px;
+        width: 102px;
+        height: 44px;
+        font-size: 18px;
+        background: #3390e9;
+        color: #fff;
+        border-radius: 5px;
+        border-width: 0;
+
+        .searchBtnText {
+        }
+      }
+    }
+  }
+
+  .hero-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(24, 52, 93, 0.85);
+
+    .hero-footer-container {
+
+      display: flex;
+      align-items: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 18px;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .upsell-main {
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        color: $white;
+
+        .icon {
+          display: inline-block;
+          height: 40px;
+          width: 50px;
+          margin-right: 10px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+        }
+
+        strong {
+          margin-right: 10px;
+          font-weight: 700;
+          font-size: 18px;
+        }
+
+        span {
+          font-size: 18px;
+        }
+      }
+
+      .upsell-button {
+        margin-left: auto;
+        font-size: 15px;
+        background: #006AFF;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        cursor: pointer;
+        display: inline-block;
+        padding: .4em .67em;
+        text-align: center;
+        white-space: normal;
+        width: auto;
+        line-height: 1.5;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+
+}

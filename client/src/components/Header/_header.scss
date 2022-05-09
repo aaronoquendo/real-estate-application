@@ -1,0 +1,107 @@
+.header-wrapper {
+  background: $headerbackground;
+  border-bottom: 1px solid #D1D1D5;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .4);
+  margin-bottom: .5px;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    height: 80px;
+    max-width: 1280px;
+    padding: 20px 15px;
+    margin: 0 auto;
+
+    #header-hamburger-icon {
+      display: none;
+      outline: none;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        img {
+          margin-right: 10px;
+        }
+
+        span {
+          margin-top: 6px;
+          color: black;
+          letter-spacing: 2px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .left-nav {
+      a {
+        color: $headerlinks;
+        text-decoration: none;
+        padding: 7px 28px 7px 0;
+        letter-spacing: $headerletterspacing;
+        text-transform: capitalize;
+        font-weight: $headerfontweight;
+        font-size: $headerlinksfontsize;
+
+        &:hover {
+          color: #FF718E;
+        }
+
+        &.register-btn {
+          background: $pink;
+          padding: 7px 28px 7px 0;
+          text-align: center;
+          color: white;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .right-nav {
+      a {
+        color: $headerlinks;
+        text-decoration: none;
+        padding: 7px 28px 7px 0;
+        letter-spacing: $headerletterspacing;
+        text-transform: capitalize;
+        font-weight: $headerfontweight;
+        font-size: $headerlinksfontsize;
+
+        &:hover {
+          color: #FF718E;
+        }
+
+        &.register-btn {
+          background: $pink;
+          padding: 7px 25px;
+          text-align: center;
+          color: white;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+//.nav-mask{
+//
+//  position: fixed;
+//  z-index: 1;
+//  background: #fff;
+//  opacity: .8;
+//  width: 100%;
+//  height: 100%;
+//}
+
+

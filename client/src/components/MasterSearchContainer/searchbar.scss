@@ -1,0 +1,524 @@
+@font-face {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
+  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"),
+    url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"),
+    url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"),
+    url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"),
+    url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+}
+
+
+#search-bar-container {
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px solid #D1D1D5;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .4);
+  z-index: 1;
+  position: relative;
+
+  .toolbar-left {
+    display: inline-block;
+    height: 50px;
+
+    .search-box-content {
+      display: inline-block;
+      height: 50px;
+
+      .searchbox {
+        padding-left: 10px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+        label {}
+
+        #citystatezip {
+          width: 243px;
+          z-index: 99;
+          height: 34px;
+          background-color: #FFF;
+          border-radius: 0;
+          padding-right: 32px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          padding: 4px 6px 2px;
+          border: 1px solid #A7A6AB;
+          font-size: 14px;
+          box-shadow: inset 0 2px 2px #F9F9FB, 0 0 0 #62aef7;
+
+        }
+
+        .button-container {
+          display: inline-block;
+          position: relative;
+          left: -24px;
+          z-index: 200;
+
+
+          .search-button {
+            padding: 0;
+            border: none;
+            background: none;
+            color: $maincolor1;
+
+            i {}
+          }
+        }
+      }
+    }
+
+    #search-sort-bar {
+      display: inline-block;
+
+      #search-filters {
+        #searchfilters {
+          .filter-menu {
+            display: inline-block;
+
+            legend {
+              .menu-label {
+                line-height: 50px;
+                color: black;
+                outline: none;
+                user-select:none;
+                text-decoration: none;
+                cursor: pointer;
+
+                &:hover {
+                  color: $maincolor1;
+                }
+
+                div {
+                  padding: 0 10px;
+                  font-size: 14px;
+
+                  .fas.fa-sort-down {
+                    display: none;
+                    margin-left: 5px;
+                    position: relative;
+                    top: -1.5px;
+                  }
+
+                  .fas.fa-sort-up {
+                    margin-left: 5px;
+                    position: relative;
+                    top: 5.5px;
+                  }
+                }
+
+                #listings-menu-label {
+
+
+                  span {}
+                }
+              }
+
+            }
+
+            .filter-pane {
+              position: absolute;
+              display: none;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              background-color: #fff;
+              box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .5);
+
+              // Below is for the listing type filter pane
+              #category-entries {
+                min-width: 90px;
+                padding-left: 12px;
+                padding-right: 12px;
+
+                .home-icons {
+                  .listing-type {
+                    line-height: 27px;
+
+                    .listing-category {
+                      user-select: none;
+                   
+                      .checkbox {
+                        cursor: pointer;
+                        user-select: none;
+                        
+                      }
+
+                      label {
+                        cursor: pointer;
+
+                        .icon-for-sale,
+                        .icon-for-rent,
+                        .icon-recently-sold {}
+
+                        .listing-type-text {
+                          line-height: 1.5;
+                          font-weight: 700;
+                          text-transform: uppercase;
+                          font-size: 13px;
+                        }
+
+                        #fs-listings-resultCountWrapper,
+                        #fr-listings-resultCountWrapper,
+                        #rs-listings-resultCountWrapper {
+                          font-size: 13px;
+                        }
+                      }
+
+                    }
+                  }
+
+                }
+              }
+
+              #only-entries {
+                padding-left: 12px;
+                padding-right: 12px;
+                font-weight: 700;
+                user-select: none;
+                font-size: 14px;
+                cursor: pointer;
+
+                .only-entries-ul {
+                  cursor: pointer;
+
+                  .only-entries-li {
+                    user-select: none;
+                    cursor: pointer;
+                    line-height: 27px;
+
+                    .checkbox {}
+
+
+                    label {
+                      cursor: pointer;
+
+                      .open-houses {
+                        cursor: pointer;
+                      }
+                    }
+
+                  }
+                }
+              }
+
+              // Below is the css for the price filter pane
+              .price-entries {
+                border-color: #A7A6AB;
+                border-style: solid;
+                border-width: 0 0 1px;
+
+                padding-bottom: 10px;
+                margin-bottom: 0;
+
+                .dualboxes {
+
+                  .box1,
+                  .box2 {
+
+                    display: inline-block;
+                    width: 85px;
+                    background: 0 0;
+                    margin: 0 10px;
+
+                    input {
+                      width: 85px;
+                      height: 30px;
+                      padding: 4px 6px 2px;
+                      border: 1px solid #A7A6AB;
+                      background-color: #fff;
+                      box-shadow: inset 0 2px 2px #F9F9FB, 0 0 0 #62aef7;
+
+                      &:focus {}
+                    }
+                  }
+
+                  .dash {
+                    order: 0;
+                    color: #aaa;
+                    background-color: #aaa;
+                    display: inline-block;
+                    height: 1px;
+                    width: 10px;
+                    position: relative;
+                    vertical-align: middle;
+
+                  }
+
+                }
+              }
+
+              .filter-price {
+                #price-min-options {}
+
+                #price-max-options {
+                  display: none;
+
+                  a {
+                    text-align: right;
+                  }
+                }
+
+                .price-options {
+                  .dropdown-options {
+                    li {
+                      .option {
+                        display: inline-block;
+                        line-height: normal;
+
+                        height: auto;
+                        width: 100%;
+                        padding: 10px;
+                        cursor: pointer;
+                        font-weight: 300;
+                        text-decoration: none;
+                        color: #333;
+                        font-size: 15.5px;
+                        outline: none;
+
+                        &:hover {
+                          background: $maincolor1;
+                          color: white;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+          }
+
+          .price-menu .filter-pane {
+            padding-bottom: 0;
+          }
+
+          .beds-menu .filter-pane {
+            padding: 0;
+
+            .search-entry {
+              min-width: 90px;
+
+              .bed-options {
+                .selected {
+                  background: #62aef7;
+
+                  .option {
+                    color: #fff;
+
+                  }
+                }
+
+                li {
+                  .option {
+                    line-height: normal;
+                    font-size: 15px;
+                    outline: none;
+                    height: auto;
+                    width: 100%;
+                    display: block;
+                    padding: 10px;
+                    margin: 0;
+                    cursor: pointer;
+                    font-weight: 400;
+                    text-decoration: none;
+                    color: #333;
+
+                    &:hover {
+                      background: #006AFF;
+                      color: #FFF;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .home-type-menu .filter-pane {
+
+            .hometype-options {
+              li {
+                padding: 6px 12px;
+                line-height: 27px;
+
+                input {
+                  top: -2px;
+                  position: relative;
+                  cursor: pointer;
+                }
+
+                label {
+
+                  user-select: none;
+                  cursor: pointer;
+                  display: inline-block;
+                  padding-left: 10px;
+                }
+              }
+            }
+          }
+
+          .more-menu .filter-pane {
+            display: block;
+            width: 340px;
+            line-height: 1em;
+            display: none;
+            .search-entry {
+              margin-bottom: 10px;
+              padding: 0 12px;
+              display: flex;
+              .title {
+                width: 115px;
+                display: inline-block;
+
+
+                line-height: 29px;
+                text-align: left;
+                padding-bottom: 1px;
+              }
+            }
+
+            .combobox {
+              width: 200px;
+              height: 29px;
+              border: 1px solid #d2d2d2;
+              border-top-color: #aeaeae;
+
+            }
+
+            #baths-entries {
+              #baths-dropdown {
+                width: 85px;
+                display: inline-block;
+                line-height: 29px;
+
+                #bath-options {
+                  display: none;
+                }
+              }
+            }
+
+            #sqft-entries {
+              display: flex;
+
+              .title {
+                display: flex;
+              }
+
+              .dualboxes {
+                display: flex;
+              }
+            }
+
+            #lot-size-entries {
+              display: flex;
+
+              #lot-min-dropdown {
+                #lot-size-select-options {
+                  display: none;
+                }
+              }
+            }
+
+            #yearbuilt-entries {
+              display: flex;
+
+              .dualboxes {
+                display: flex;
+              }
+            }
+            #days-entries{
+              #days-dropdown{
+                #days-options{
+                  display: none;
+                }
+              }
+            }
+            #attribute-entry{
+              justify-content: space-between;
+              #attribute-terms{
+                width: 200px;
+                height: 74px;
+                resize: none;
+              }
+            }
+
+            .button_primary{
+              display: flex;
+              justify-content: center;
+              background: #006AFF;
+              color:white;
+              text-transform: initial;
+              font-weight: 400;
+              font-size: 15px;
+              border-radius: 5px;
+              height: auto;
+              margin: 0 auto;
+              padding: .4em 1em;
+              width: 6em;
+              cursor: pointer;
+              span{
+                line-height: 1.5;
+           
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .toolbar-right {
+
+    display: inline-block;
+    position: absolute;
+    right: 0;
+
+    #save-search-button {
+      padding: 0 10px;
+      display: inline-block;
+
+      a {
+        color: #444;
+        font-weight: 500;
+        letter-spacing: .25px;
+        text-decoration: none;
+      }
+    }
+
+    #fav-control-myhome {
+      display: inline-block;
+
+      .toolbar-button {
+        font-weight: 700;
+        font-size: 13.5px;
+        line-height: 48px;
+        height: 50px;
+        text-transform: capitalize;
+        border: 1px solid transparent;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        padding: 0 .67em;
+        text-align: center;
+        background: #006AFF;
+        text-decoration: none;
+        letter-spacing: .25px;
+      }
+    }
+  }
+}
+
+
+.hide-visually {
+  background-color: transparent;
+  border: 0;
+  color: transparent;
+  font: 0/0 a;
+  position: absolute;
+  text-shadow: none;
+}

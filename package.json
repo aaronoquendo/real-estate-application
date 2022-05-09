@@ -1,0 +1,24 @@
+{
+  "name": "real-estate-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "create-react": "npm create-react-app client",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "http": "0.0.0",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7",
+    "standard": "^12.0.1"
+  }
+}

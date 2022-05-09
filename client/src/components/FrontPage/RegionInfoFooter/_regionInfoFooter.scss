@@ -1,0 +1,48 @@
+.region-info-footer {
+  background-color: #F1F1F4;
+}
+
+.region-info-content {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  padding-top: 30px;
+  text-align: left;
+
+  .region-info-col {
+    margin-bottom: 30px;
+    padding: 0 10px;
+
+    .region-info-header {
+      margin-bottom: 15px;
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .region-info-list {
+      li{
+        margin-bottom: 10px;
+        a{
+          color: #2A2A33;
+          cursor: pointer;
+          font-weight: 300;
+          text-decoration: none;
+        }
+      }
+    }
+    .show-hide-link{
+      color: #006AFF;
+      font: inherit;
+      border: 0;
+      background: 0;
+      padding: 0;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}

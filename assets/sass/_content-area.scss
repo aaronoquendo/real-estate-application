@@ -1,0 +1,9 @@
+#content-area {
+  overflow: auto;
+  width: 100%;
+  min-height: 100vh;
+
+  #main-container {
+    max-width: 100% !important;
+  }
+}

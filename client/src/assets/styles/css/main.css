@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import url("https://use.fontawesome.com/releases/v5.3.1/css/all.css");
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block
+}
+
+body {
+  line-height: 1
+}
+
+ol, ul {
+  list-style: none
+}
+
+blockquote, q {
+  quotes: none
+}
+
+blockquote:after, blockquote:before, q:after, q:before {
+  content: '';
+  content: none
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+*, body, html {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box
+}
+
+.container {
+  max-width: 100%
+}
+
+header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #0C002B;
+  color: white;
+  overflow: auto;
+  padding: 20px 15px
+}
+
+header .logo {
+  float: left;
+  border: 1px solid white;
+  padding: 10px
+}
+
+header .right-nav {
+  float: right
+}
+
+header .right-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 7px 25px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 0.9rem
+}
+
+header .right-nav a:hover {
+  color: #FF718E
+}
+
+header .right-nav a.register-btn {
+  background: #FF718E;
+  padding: 7px 25px;
+  text-align: center;
+  color: white;
+  border-radius: 5px
+}
+
+#filter {
+  background: #FAF7F5;
+  display: block;
+  height: 100vh
+}
+
+#filter .inside {
+  background: #FAF7F5;
+  padding: 20px
+}
+
+#filter h4 {
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  font-weight: 700px;
+  text-transform: uppercase
+}
+
+#filter select {
+  background: transparent;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1b1b1b;
+  display: block;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  width: 100%
+}
+
+#filter .filters .title {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 1rem;
+  color: #828d9d
+}
+
+#filter .filters input[type="text"] {
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0.4rem;
+  width: 45%;
+  display: inline-block;
+  margin-right: 2.5%;
+  margin-bottom: 1rem
+}
+
+#filter .filters.extras label {
+  display: block;
+  width: 100%;
+  padding: 10px 0
+}
+
+#filter .filters.extras label input[type="checkbox"] {
+  float: right
+}
+
+#listings {
+  display: block;
+  padding: 15px;
+  background: #FFFEFF
+}
+
+#listings .search-area input[type="text"] {
+  width: 100%;
+  background: transparent;
+  font-size: 2rem;
+  font-weight: 100;
+  border: none;
+  border-bottom: 2px solid #828d9d;
+  margin-bottom: 20px;
+  color: #dadde2
+}
+
+#listings .sortby-area {
+  margin-bottom: 20px
+}
+
+#listings .sortby-area .results {
+  color: #828d9d;
+  font-size: 0.8rem;
+  display: inline-block
+}
+
+#listings .sortby-area .sort-options {
+  float: right
+}
+
+#listings .sortby-area .sort-options select {
+  font-size: 0.9rem;
+  font-weight: 300;
+  border: 1px solid #dadde2;
+  background: transparent;
+  margin-right: 15px;
+  vertical-align: top
+}
+
+#listings .sortby-area .sort-options .view {
+  display: inline-block
+}
+
+#listings .sortby-area .sort-options .view .fa {
+  font-size: 1.5rem;
+  margin-right: 15px
+}
+
+#listings .listings-results {
+  margin-bottom: 80px
+}
+
+#listings .listings-results .listing {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 9px 54px -4px #e0e0e0
+}
+
+#listings .listings-results .listing .listing-img {
+  color: white;
+  padding: 15px;
+  position: relative;
+  background: url("https://cdn.freshome.com/wp-content/uploads/2014/04/Gorgeous-evening-view-of-Russet-Residence--1025x450.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 200px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px
+}
+
+#listings .listings-results .listing .listing-img:hover .details {
+  opacity: 1
+}
+
+#listings .listings-results .listing .listing-img:hover .address {
+  opacity: 0
+}
+
+#listings .listings-results .listing .listing-img .address {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  position: absolute;
+  bottom: 20px;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 0 1px 4px #5b5b5b
+}
+
+#listings .listings-results .listing .listing-img .details {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  padding: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: #9828cc;
+  background: linear-gradient(135deg, rgba(152, 40, 204, 0.8) 0%, rgba(196, 137, 255, 0.8) 98%)
+}
+
+#listings .listings-results .listing .listing-img .details .user-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: inline-block;
+  background: url("https://d3iw72m71ie81c.cloudfront.net/male-65.jpg") no-repeat center center;
+  background-size: cover
+}
+
+#listings .listings-results .listing .listing-img .details .user-details {
+  display: inline-block;
+  vertical-align: top;
+  width: 70%;
+  margin-left: 20px
+}
+
+#listings .listings-results .listing .listing-img .details .user-details .user-name {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #fff;
+  display: block;
+  margin-top: 3px;
+  margin-bottom: 5px
+}
+
+#listings .listings-results .listing .listing-img .details .user-details .post-date {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  display: block
+}
+
+#listings .listings-results .listing-details {
+  margin-top: 15px
+}
+
+#listings .listings-results .listing-details .fa {
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 15px
+}
+
+#listings .listings-results .listing-details span {
+  display: inline-block;
+  font-size: 0.8rem;
+  vertical-align: top;
+  position: relative;
+  top: 3px
+}
+
+#listings .listings-results .listing-details .floor-space {
+  margin-bottom: 10px
+}
+
+#listings .listings-results .bottom-info {
+  padding: 20px 15px;
+  margin-bottom: 20px
+}
+
+#listings .listings-results .bottom-info .price {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 10px;
+  color: black
+}
+
+#listings .listings-results .bottom-info .location {
+  font-size: 1.2rem;
+  display: block;
+  color: black
+}
+
+.view-btn {
+  background: black;
+  padding: 8px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 150px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out
+}
+
+.view-btn:hover {
+  background: #FF718E
+}
+
+#pagination {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%
+}
+
+#pagination .pages {
+  display: inline-block;
+  background: white;
+  box-shadow: 0 9px 54px -4px #e0e0e0
+}
+
+#pagination .pages li {
+  padding: 20px 30px;
+  display: inline-block
+}
+
+#pagination .pages li.active, #pagination .pages li:hover {
+  color: white;
+  font-weight: 700;
+  background: #FF718E;
+  cursor: pointer
+}
+
+#content-area {
+  overflow: auto;
+  width: 100%;
+  min-height: 100vh
+}
+
+#content-area #main-container {
+  max-width: 100% !important
+}
+

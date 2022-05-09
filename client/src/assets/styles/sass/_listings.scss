@@ -1,0 +1,251 @@
+#listings {
+  display: block;
+  padding: 15px;
+  background: $offwhite;
+
+  .search-area {
+    input[type="text"] {
+      width: 100%;
+      background: transparent;
+      font-size: 2rem;
+      font-weight: 100;
+      border: none;
+      border-bottom: 2px solid $darkgrey;
+      margin-bottom: 20px;
+      color: $lightgrey;
+    }
+  }
+
+  .sortby-area {
+    margin-bottom: 20px;
+
+    .results {
+      color: $darkgrey;
+      font-size: 0.8rem;
+      display: inline-block;
+    }
+
+    .sort-options {
+      float: right;
+
+      select {
+        font-size: 0.9rem;
+        font-weight: 300;
+        border: 1px solid $lightgrey;
+        background: transparent;
+        margin-right: 15px;
+        vertical-align: top;
+      }
+
+      .view {
+        display: inline-block;
+
+        .fa {
+          font-size: 1.5rem;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  .listings-results {
+    margin-bottom: 80px;
+
+    .listing {
+      background: #fff;
+      border-radius: 5px;
+      -webkit-box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
+      -moz-box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
+      box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
+
+      .listing-img {
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        position: relative;
+        background: url("https://cdn.freshome.com/wp-content/uploads/2014/04/Gorgeous-evening-view-of-Russet-Residence--1025x450.jpg") no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover !important;
+        min-height: 200px;
+        -webkit-border-top-left-radius: 5px;
+        -webkit-border-top-right-radius: 5px;
+        -moz-border-radius-topleft: 5px;
+        -moz-border-radius-topright: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        &:hover {
+          .details {
+            opacity: 1;
+          }
+
+          .address {
+            opacity: 0;
+          }
+        }
+
+        .address {
+          font-size: 1.3rem;
+          text-transform: capitalize;
+          position: absolute;
+          bottom: 20px;
+          opacity: 1;
+          transition: all 0.3s ease-in-out;
+          text-shadow: 0 1px 4px rgba(91,91,91,1);
+        }
+
+        .details {
+          transition: all 0.3s ease-in-out;
+          opacity: 0;
+          padding: 30px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          -webkit-border-top-left-radius: 5px;
+          -webkit-border-top-right-radius: 5px;
+          -moz-border-radius-topleft: 5px;
+          -moz-border-radius-topright: 5px;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9828cc+0,c489ff+98 */
+          background: rgb(152,40,204);
+          /* Old browsers */
+          background: -webkit-linear-gradient(-45deg, rgba(152,40,204,.8) 0%,rgba(196,137,255,.8) 98%);
+          /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(135deg, rgba(152,40,204,.8) 0%,rgba(196,137,255,.8) 98%);
+          /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          .user-img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid white;
+            display: inline-block;
+            background: url("https://randomuser.me/api/portraits/women/68.jpg") no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+          }
+
+          .user-details {
+            display: inline-block;
+            vertical-align: top;
+            width: 70%;
+
+            .user-name {
+              font-weight: 300;
+              font-size: 0.9rem;
+              color: rgba(255,255,255,1);
+              display: block;
+              margin-top: 3px;
+              margin-bottom: 5px;
+            }
+
+            .post-date {
+              color: rgba(255,255,255,.7);
+              font-size: 0.9rem;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .listing-details {
+      margin-top: 15px;
+      display: flex;
+      justify-content: flex-start;
+      align-items:center;
+      .fa {
+        display: inline-block;
+        font-size: 20px;
+        
+      }
+
+      span {
+        display: inline-block;
+        font-size: 0.8rem;
+    
+      }
+
+      .floor-space {
+        display: flex;
+        flex-direction: row;
+        margin-right: 20px;
+      }
+
+      .bedrooms {
+        display: inline-block;
+        span{
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .bottom-info {
+      padding: 20px 15px;
+      margin-bottom: 20px;
+
+      .price {
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 10px;
+        color: black;
+      }
+
+      .location {
+        font-size: 1.2rem;
+        display: block;
+        color: black;
+      }
+    }
+  }
+}
+
+.view-btn {
+  background: black;
+  padding: 8px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 150px;
+  margin: 10px auto;
+  cursor: pointer;
+  transition: background 0.15s ease-in-out;
+
+  &:hover {
+    background: $pink;
+  }
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+
+  .pages {
+    display: inline-block;
+    background: white;
+    -webkit-box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
+    -moz-box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
+    box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
+
+    li {
+      padding: 20px 30px;
+      display: inline-block;
+
+      &.active,
+      &:hover {
+        color: white;
+        font-weight: 700;
+        background: $pink;
+        cursor: pointer;
+      }
+    }
+  }
+}

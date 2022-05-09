@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+@import "reset";
+@import "variables";
+
+
+*,
+body,
+html {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  // background: purple;
+}
+
+.container {
+  max-width: 100%;
+}
+.isActive{
+  display: block !important;
+}
+.hidden {
+  display: none;
+}
+.hide{
+  display: none ;
+}
+
+@import "../../../components/Header/header";
+@import "../../../components/Header/mobilemenu";
+@import "../../../components/MasterSearchContainer/searchbar";
+@import "../../../components/FrontPage/HeroDisplay/heroDisplay";
+@import "../../../components/FrontPage/RegionInfoFooter/regionInfoFooter";
+@import "../../../components/FrontPage/BrandsFooter/brands-footer";
+@import "../../../components/FrontPage/Footer/footer";
+@import "filter";
+@import "listings";
+@import "content-area";
+
+@import "media-queries";
+
+
+
