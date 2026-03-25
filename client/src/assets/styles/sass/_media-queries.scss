@@ -33,6 +33,55 @@
     display: none !important;
   }
 
+  // Search bar responsive fixes
+  #search-bar-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    .toolbar-left {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+
+      .search-box-content {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+        .searchbox {
+          width: 100%;
+          padding-left: 10px;
+
+          #citystatezip {
+            width: calc(100% - 60px);
+          }
+        }
+      }
+
+      #search-sort-bar {
+        width: 100%;
+        height: 50px;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-top: 1px solid #D1D1D5;
+        -webkit-overflow-scrolling: touch;
+
+        #search-filters {
+          height: 50px;
+          display: inline-flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .toolbar-right {
+      display: none;
+    }
+  }
+
 }
 @media (min-width: 767.98px) {
   .mobile-menu {

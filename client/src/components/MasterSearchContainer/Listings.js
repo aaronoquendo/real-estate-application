@@ -17,185 +17,69 @@ class Header extends Component {
     this.props.filterProperties(properties.allProperties, value)
   }
 
+  renderOverlay (property) {
+    return (
+      <div className='details'>
+        <div className='listing-type-badge'>
+          {property.isForSale && <span className='badge'>For Sale</span>}
+          {property.isForRent && <span className='badge'>For Rent</span>}
+          {property.wasSold && <span className='badge sold'>Sold</span>}
+        </div>
+        <div className='listing-stats'>
+          <div className='stat-pill'>
+            <i className='fa fa-expand' aria-hidden='true' />
+            <span>{property.floorSpace} ft&sup2;</span>
+          </div>
+          <div className='stat-pill'>
+            <i className='fa fa-bed' aria-hidden='true' />
+            <span>{property.rooms} beds</span>
+          </div>
+          <div className='stat-pill'>
+            <i className='fa fa-bath' aria-hidden='true' />
+            <span>{property.baths} baths</span>
+          </div>
+          <div className='stat-pill'>
+            <i className='fa fa-home' aria-hidden='true' />
+            <span>{property.homeType}</span>
+          </div>
+        </div>
+        {property.extras && property.extras.length > 0 && (
+          <div className='listing-extras'>
+            {property.extras.map((extra, i) => (
+              <span className='extra-tag' key={i}>{extra}</span>
+            ))}
+          </div>
+        )}
+        <div className='view-btn'>View Listing</div>
+      </div>
+    )
+  }
+
   loopListings (properties) {
-    if(typeof properties.filteredProperties !== 'undefined' && properties.filteredProperties.length > 0){
-      return properties.filteredProperties.map((property, index) => {
-        // This is the long box view
-        if (this.props.globalState.view === 'box') {
-          return (
-            <div className='col-sm-12 col-md-6 col-lg-4 col-xl-3' key={index}>
-              <div className='listing'>
-                <div className='listing-img' style={{ background: `url("${property.image}") no-repeat center center` }}>
-                  <span className='address'>{property.address}</span>
-                  <div className='details'>
-                    <div className='container'>
-                      <div className='row'>
-                        <div className='col-md-3'>
-                          <div className='user-img' />
-                        </div>
-                        <div className='col-md-9'>
-                          <div className='user-details'>
-                            <span className='user-name'>Jeffery Johnson </span>
-                            <span className='post-date'>05/05/2017</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='listing-details'>
-                        <div className='floor-space'><i className='fa fa-square-o' aria-hidden='true' /> <span>{property.floorSpace} ft&sup2;</span></div>
-                        <div className='bedrooms'>
-                          <i className='fa fa-bed' aria-hidden='true' />
-                          <span>{property.rooms} bedrooms</span>
-                        </div>
-                      </div>
+    const data = (typeof properties.filteredProperties !== 'undefined' && properties.filteredProperties.length > 0)
+      ? properties.filteredProperties
+      : properties.allProperties
 
-                    </div>
-                    <div className='view-btn'>
-                              View Listing
-                        </div>
-                  </div>
-                </div>
-                <div className='bottom-info'>
-                  <span className='price'>${property.price}</span>
-                  <span className='location'><i className='fa fa-map-marker' aria-hidden='true' /> {property.city}, {property.state}</span>
-                </div>
-              </div>
+    return data.map((property, index) => {
+      const colClass = this.props.globalState.view === 'box'
+        ? 'col-sm-12 col-md-6 col-lg-4 col-xl-3'
+        : 'col-md-12 col-lg-6'
+
+      return (
+        <div className={colClass} key={index}>
+          <div className='listing'>
+            <div className='listing-img' style={{ background: `url("${property.image}") no-repeat center center` }}>
+              <span className='address'>{property.address}</span>
+              {this.renderOverlay(property)}
             </div>
-          )
-        } else {
-          // This is the long view
-          return (
-              <div className='col-md-12 col-lg-6' key={index}>
-                <div className='listing'>
-                  <div className='listing-img' style={{ background: `url("${property.image}") no-repeat center center` }}>
-                    <span className='address'>{property.address}</span>
-                    <div className='details'>
-    
-                      <div className='col-md-3'>
-                        <div className='user-img' />
-                      </div>
-    
-                      <div className='col-md-9'>
-                        <div className='user-details'>
-                          <span className='user-name'>Jack Smith </span>
-                          <span className='post-date'>05/05/2017</span>
-                        </div>
-    
-                        <div className='listing-details'>
-                          <div className='floor-space'><i className='fa fa-square-o' aria-hidden='true' /> <span>{property.floorSpace} ft&sup2;</span></div>
-                          <div className='bedrooms'>
-                            <i className='fa fa-bed' aria-hidden='true' />
-                            <span>{property.rooms} bedrooms</span>
-                          </div>
-                        </div>
-
-                      </div>
-                      <div className='view-btn'>
-                              View Listing
-                          </div>
-    
-                    </div>
-                  </div>
-                  <div className='bottom-info'>
-                    <span className='price'>${property.price}</span>
-                    <span className='location'><i className='fa fa-map-marker' aria-hidden='true' /> {property.city}, {property.state}</span>
-                  </div>
-                </div>
-              </div>
-            )
-          }
-        }
+            <div className='bottom-info'>
+              <span className='price'>${property.price}</span>
+              <span className='location'><i className='fa fa-map-marker' aria-hidden='true' /> {property.city}, {property.state}</span>
+            </div>
+          </div>
+        </div>
       )
-
-    }else{
-
-      return properties.allProperties.map((property, index) => {
-      
-        // This is the long box view
-        if (this.props.globalState.view === 'box') {
-          
-          return (
-            <div className='col-sm-12 col-md-6 col-lg-4 col-xl-3' key={index}>
-              <div className='listing'>
-                <div className='listing-img' style={{ background: `url("${property.image}") no-repeat center center` }}>
-                  <span className='address'>{property.address}</span>
-                  <div className='details'>
-                    <div className='container'>
-                      <div className='row'>
-                        <div className='col-md-3'>
-                          <div className='user-img' />
-                        </div>
-                        <div className='col-md-9'>
-                          <div className='user-details'>
-                            <span className='user-name'>Jeffery Johnson </span>
-                            <span className='post-date'>05/05/2017</span>
-                          </div>
-                          <div className='listing-details'>
-                            <div className='floor-space'><i className='fa fa-square-o' aria-hidden='true' /> <span>{property.floorSpace} ft&sup2;</span></div>
-                            <div className='bedrooms'>
-                              <i className='fa fa-bed' aria-hidden='true' />
-                              <span>{property.rooms} bedrooms</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className='view-btn'>
-                              View Listing
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <div className='bottom-info'>
-                  <span className='price'>${property.price}</span>
-                  <span className='location'><i className='fa fa-map-marker' aria-hidden='true' /> {property.city}, {property.state}</span>
-                </div>
-              </div>
-            </div>
-          )
-        } else {
-          // This is the long view
-          return (
-            <div className='col-md-12 col-lg-6' key={index}>
-              <div className='listing'>
-                <div className='listing-img' style={{ background: `url("${property.image}") no-repeat center center` }}>
-                  <span className='address'>{property.address}</span>
-                  <div className='details'>
-  
-                    <div className='col-md-3'>
-                      <div className='user-img' />
-                    </div>
-  
-                    <div className='col-md-9'>
-                      <div className='user-details'>
-                        <span className='user-name'>Jack Smith </span>
-                        <span className='post-date'>05/05/2017</span>
-                      </div>
-  
-                      <div className='listing-details'>
-                        <div className='floor-space'><i className='fa fa-square-o' aria-hidden='true' /> <span>{property.floorSpace} ft&sup2;</span></div>
-                        <div className='bedrooms'>
-                          <i className='fa fa-bed' aria-hidden='true' />
-                          <span>{property.rooms} bedrooms</span>
-                        </div>
-                      </div>
-                      <div className='view-btn'>
-                            View Listing
-                      </div>
-                    </div>
-  
-                  </div>
-                </div>
-                <div className='bottom-info'>
-                  <span className='price'>${property.price}</span>
-                  <span className='location'><i className='fa fa-map-marker' aria-hidden='true' /> {property.city}, {property.state}</span>
-                </div>
-              </div>
-            </div>
-          )
-        }
-      }
-      )
-    }
+    })
 
 
 

@@ -73,7 +73,7 @@ var listingsData = [
         'gym'
       ],
       homeType:'apartment',
-      image:'https://thenypost.files.wordpress.com/2019/07/re-44-handsome-avenue.jpg?quality=80&strip=all&w=978&h=652'
+      image:'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg'
     },
     {
       address:'20 Grand view ave',
@@ -130,10 +130,10 @@ var listingsData = [
         'pool'
       ],
       homeType:'townhome',
-      image:'http://photos.mredllc.com/photos/property/434/09300434.jpg'
+      image:'https://images.pexels.com/photos/8134816/pexels-photo-8134816.jpeg'
     },
     {
-      address:'76 mohawk ave',
+      address:'69 Simonson Place',
       city: 'Dreamtown',
       state: 'NJ',
       rooms: 4,
@@ -149,7 +149,7 @@ var listingsData = [
         'pool'
       ],
       homeType:'house',
-      image:'https://photos.zillowstatic.com/cc_ft_1536/IS62txkeuo0gce1000000000.webp'
+      image:'https://images.pexels.com/photos/7031412/pexels-photo-7031412.jpeg'
     },
     {
       address:'50 Decker ave',
@@ -168,7 +168,7 @@ var listingsData = [
         'pool'
       ],
       homeType:'lot',
-      image:'https://photos.zillowstatic.com/cc_ft_1536/ISma2jnx1pqodr0000000000.webp'
+      image:'https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg'
     },
     {
       address:'20 Jack ave',
@@ -206,7 +206,7 @@ var listingsData = [
         'pool'
       ],
       homeType:'apartment',
-      image:'https://photos.zillowstatic.com/cc_ft_1536/IS276kp2mxehwu0000000000.webp'
+      image:'https://images.pexels.com/photos/10486072/pexels-photo-10486072.jpeg'
     },
     {
       address:'20 Willowbrook Road',
@@ -225,7 +225,7 @@ var listingsData = [
         'pool'
       ],
       homeType:'house',
-      image:'https://photos.zillowstatic.com/p_h/ISyvql2w42k9a81000000000.jpg'
+      image:'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg'
     }
 ]
 
