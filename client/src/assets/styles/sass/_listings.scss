@@ -97,58 +97,84 @@
         }
 
         .details {
-          transition: all 0.3s ease-in-out;
+          transition: opacity 0.3s ease-in-out;
           opacity: 0;
-          padding: 30px;
           position: absolute;
           top: 0;
           left: 0;
           bottom: 0;
           right: 0;
-          -webkit-border-top-left-radius: 5px;
-          -webkit-border-top-right-radius: 5px;
-          -moz-border-radius-topleft: 5px;
-          -moz-border-radius-topright: 5px;
           border-top-left-radius: 5px;
           border-top-right-radius: 5px;
-          /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9828cc+0,c489ff+98 */
-          background: rgb(152,40,204);
-          /* Old browsers */
-          background: -webkit-linear-gradient(-45deg, rgba(152,40,204,.8) 0%,rgba(196,137,255,.8) 98%);
-          /* Chrome10-25,Safari5.1-6 */
-          background: linear-gradient(135deg, rgba(152,40,204,.8) 0%,rgba(196,137,255,.8) 98%);
-          /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-          .user-img {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            border: 2px solid white;
-            display: inline-block;
-            background: url("https://randomuser.me/api/portraits/women/68.jpg") no-repeat center center;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
+          background: rgba(15, 15, 25, 0.82);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+          padding: 20px;
+
+          .listing-type-badge {
+            display: flex;
+            gap: 6px;
+
+            .badge {
+              font-size: 0.7rem;
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: 0.05em;
+              padding: 3px 10px;
+              border-radius: 20px;
+              background: rgba(255,255,255,0.15);
+              border: 1px solid rgba(255,255,255,0.3);
+              color: #fff;
+
+              &.sold {
+                background: rgba(220, 80, 80, 0.4);
+                border-color: rgba(220, 80, 80, 0.6);
+              }
+            }
           }
 
-          .user-details {
-            display: inline-block;
-            vertical-align: top;
-            width: 70%;
+          .listing-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
 
-            .user-name {
-              font-weight: 300;
-              font-size: 0.9rem;
-              color: rgba(255,255,255,1);
-              display: block;
-              margin-top: 3px;
-              margin-bottom: 5px;
+            .stat-pill {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              background: rgba(255,255,255,0.12);
+              border: 1px solid rgba(255,255,255,0.18);
+              border-radius: 20px;
+              padding: 5px 12px;
+              font-size: 0.78rem;
+              color: rgba(255,255,255,0.9);
+              text-transform: capitalize;
+
+              .fa {
+                font-size: 0.85rem;
+                color: rgba(255,255,255,0.6);
+              }
             }
+          }
 
-            .post-date {
-              color: rgba(255,255,255,.7);
-              font-size: 0.9rem;
-              display: block;
+          .listing-extras {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+
+            .extra-tag {
+              font-size: 0.7rem;
+              text-transform: capitalize;
+              color: rgba(255,255,255,0.7);
+              background: rgba(255,255,255,0.07);
+              border: 1px solid rgba(255,255,255,0.12);
+              border-radius: 4px;
+              padding: 3px 8px;
             }
           }
         }
@@ -207,18 +233,21 @@
 }
 
 .view-btn {
-  background: black;
-  padding: 8px;
-  font-size: 0.9rem;
-  border-radius: 5px;
+  background: $brandpurple;
+  padding: 10px 28px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 25px;
   text-align: center;
-  max-width: 150px;
-  margin: 10px auto;
+  color: #fff;
   cursor: pointer;
-  transition: background 0.15s ease-in-out;
+  transition: background 0.2s ease-in-out, transform 0.15s ease-in-out;
 
   &:hover {
-    background: $pink;
+    background: darken($brandpurple, 8%);
+    transform: scale(1.04);
   }
 }
 
@@ -243,7 +272,7 @@
       &:hover {
         color: white;
         font-weight: 700;
-        background: $pink;
+        background: $brandpurple;
         cursor: pointer;
       }
     }

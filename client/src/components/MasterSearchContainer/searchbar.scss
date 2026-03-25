@@ -18,9 +18,14 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .4);
   z-index: 1;
   position: relative;
+  display: flex;
+  align-items: center;
 
   .toolbar-left {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
     height: 50px;
 
     .search-box-content {
@@ -73,7 +78,8 @@
     }
 
     #search-sort-bar {
-      display: inline-block;
+      display: flex;
+      align-items: center;
 
       #search-filters {
         #searchfilters {
@@ -474,9 +480,9 @@
 
   .toolbar-right {
 
-    display: inline-block;
-    position: absolute;
-    right: 0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 
     #save-search-button {
       padding: 0 10px;
@@ -505,7 +511,7 @@
         display: inline-block;
         padding: 0 .67em;
         text-align: center;
-        background: #006AFF;
+        background: #4E46CC;
         text-decoration: none;
         letter-spacing: .25px;
       }

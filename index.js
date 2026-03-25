@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 
 // Serve any static files built by React
-if(process.env.PORT){
+if (process.env.PORT) {
   app.use(express.static(path.join(__dirname, 'client', 'build')));
 
   app.get('/*', (req, res) => {

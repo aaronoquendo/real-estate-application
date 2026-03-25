@@ -1,6 +1,12 @@
 .mobile-menu {
   display: none;
   box-sizing: border-box;
+  position: fixed;
+  top: 81px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
   .mobile-menu-header{
     box-sizing: border-box;
     display: flex;
